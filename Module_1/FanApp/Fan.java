@@ -1,32 +1,49 @@
-package Module_1.FanApp;
-
 public class Fan {
-    public static void main(String[] args) {
-        ConstructorFan myFan_01 = new ConstructorFan(2, true, 5, "blue"); /*
-                                                                           * Yellow as a warning. Code will still work
-                                                                           * as intended.
-                                                                           */
-        ConstructorFan myFan_02 = new ConstructorFan(); /* Yellow as a warning. Code will still work as intended. */
-    }
-}
+/* Constants. */
+    final int STOPPED = 0;
+    final int SLOW = 1;
+    final int MEDIUM = 2;
+    final int FAST = 3;
+    private int fanSpeed = STOPPED;
+    private boolean fanPower = false;
+    private double fanRadius = 6;
+    private String fanColor = "white";
 
-/* These are Constructors. The first is a default Constructor. */
-class ConstructorFan {
-    int fanSpeed;
-    boolean fanPower;
-    double fanRadius;
-    String fanColor;
-
-    public ConstructorFan() {
-        int fanSpeed = 0; /* Yellow as a warning. Code will still work as intended. */
-        boolean fanPower = false; /* Yellow as a warning. Code will still work as intended. */
+    public Fan() {
+        int fanSpeed = 0; 
+        boolean fanPower = false; 
         double fanRadius = 6;
         String fanColor = "white";
-        System.out.println("The fan is " + fanColor + " with a " + fanRadius + " inch radius, and it is off.");
     }
 
-    public ConstructorFan(int fanSpeed, boolean fanPower, int fanRadius, String fanColor) {
-        System.out.println("The fan is " + fanColor + " with a " + fanRadius + " inch radius, and it is set at speed "
-                + fanSpeed + ".");
+    public int getSpeed(){
+        return fanSpeed;
     }
+    public boolean getPower(){
+        return fanPower;
+    }
+    public double getRadius(){
+        return fanRadius;
+    }
+    public String getColor(){
+        return fanColor;
+    }
+    public void setSpeed (int fanSpeed){
+        this.fanSpeed= fanSpeed;
+    }
+    public void setPower (boolean fanPower){
+        this.fanPower = fanPower;
+    }
+    public void setRadius (double fanRadius){
+        this.fanRadius = fanRadius;
+    }
+    public void setColor (String fanColor){
+        this.fanColor = fanColor;
+    }
+/* These are Constructors. The first is a default Constructor. */
+    public String toString(){
+        return "Fan Speed: "+fanSpeed+ "\n Fan Power: "+fanPower+ "\n Radius: "+fanRadius+"\n Fan Color: "+fanColor+ "\n ";
+    }
+
 }
+
