@@ -28,7 +28,7 @@ public class Fan{
     private int fanSpeed;
     private boolean On;
     private double fanRadius;
-    String fanColor;
+    String fanColor = "white";
 
     /* These are my constants for fan speed. */
     final static int STOPPED = 0;
