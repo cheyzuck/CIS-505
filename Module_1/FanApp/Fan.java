@@ -1,26 +1,36 @@
-public class Fan {
-/* Constants. */
-    final int STOPPED = 0;
-    final int SLOW = 1;
-    final int MEDIUM = 2;
-    final int FAST = 3;
-    private int fanSpeed = STOPPED;
-    private boolean fanPower = false;
-    private double fanRadius = 6;
-    private String fanColor = "white";
+public class Fan{
+	/* These are the attributes of a Fan. */
+    private int fanSpeed;
+    private boolean On;
+    private double fanRadius;
+    String fanColor;
 
-    public Fan() {
-        int fanSpeed = 0; 
-        boolean fanPower = false; 
+    /* These are my constants for fan speed. */
+    final static int STOPPED = 0;
+    final static int SLOW = 1;
+    final static int MEDIUM = 2;
+    final static int FAST = 3;
+
+    /* This is the default constructor. */
+    public Fan(){
+        int fanSpeed = STOPPED;
+        boolean On = false;
         double fanRadius = 6;
         String fanColor = "white";
     }
-
+    /* This is an argument constructor. */
+    public Fan(int Speed, boolean Power, double Radius, String Color){
+        int fanSpeed = Speed;
+        boolean On = Power;
+        double fanRadius = Radius;
+        String fanColor = Color;
+    }
+    /* Accessor Methods. */
     public int getSpeed(){
         return fanSpeed;
     }
-    public boolean getPower(){
-        return fanPower;
+    public boolean isOn(){
+        return On;
     }
     public double getRadius(){
         return fanRadius;
@@ -28,22 +38,30 @@ public class Fan {
     public String getColor(){
         return fanColor;
     }
-    public void setSpeed (int fanSpeed){
-        this.fanSpeed= fanSpeed;
+    /* Mutator Methods. */
+    public void setSpeed (int newSpeed){
+        fanSpeed= newSpeed;
     }
-    public void setPower (boolean fanPower){
-        this.fanPower = fanPower;
+    public void turnOn (){
+        On = true;
     }
-    public void setRadius (double fanRadius){
-        this.fanRadius = fanRadius;
+    public void turnOff(){
+        On = false;
     }
-    public void setColor (String fanColor){
-        this.fanColor = fanColor;
+    public void setRadius (double newRadius){
+        fanRadius = newRadius;
     }
-/* These are Constructors. The first is a default Constructor. */
+    public void setColor (String newColor){
+        fanColor = newColor;
+    }
+    /* toString method. */
     public String toString(){
-        return "Fan Speed: "+fanSpeed+ "\n Fan Power: "+fanPower+ "\n Radius: "+fanRadius+"\n Fan Color: "+fanColor+ "\n ";
+        if (On){
+            return "The fan is "+fanColor+" with a radius of "+fanRadius+" and the fan is off.";
+        }
+        else{
+            return "The fan speed is on and set at "+fanSpeed+". The fan is "+fanColor+" with a radius of "+fanRadius+" inches."; 
+        }
     }
-
+    
 }
-
