@@ -93,10 +93,10 @@ public class Fan{
     /* This allows changes to string based on if the boolean is true or false and outputs the string. */
     public String toString(){
         if (On){
-            return "The fan is "+fanColor+" with a radius of "+fanRadius+" and the fan is off.";
+            return "The fan speed is on and set at "+fanSpeed+". The fan is "+fanColor+" with a radius of "+fanRadius+" inches.";
         }
         else{
-            return "The fan speed is on and set at "+fanSpeed+". The fan is "+fanColor+" with a radius of "+fanRadius+" inches."; 
+            return "The fan is "+fanColor+" with a radius of "+fanRadius+" and the fan is off."; 
         }
     }/* End toString Method. */
     
