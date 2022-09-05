@@ -25,8 +25,8 @@ Payne, D., (2021). CSD 405 Intermediate Java Programming. Bellevue University, a
 
 public class Fan{
 	/* These are the attributes of a Fan. */
-    private int fanSpeed;
-    private boolean On;
+    private int fanSpeed = STOPPED;
+    private boolean On = false;
     private double fanRadius = 6; /* Correction 3. */
     String fanColor = "white"; /* Correction 2. */
 
