@@ -27,8 +27,8 @@ public class Fan{
 	/* These are the attributes of a Fan. */
     private int fanSpeed;
     private boolean On;
-    private double fanRadius;
-    String fanColor = "white";
+    private double fanRadius = 6; /* Correction 3. */
+    String fanColor = "white"; /* Correction 2. */
 
     /* These are my constants for fan speed. */
     final static int STOPPED = 0;
@@ -92,7 +92,7 @@ public class Fan{
     /* toString method. */
     /* This allows changes to string based on if the boolean is true or false and outputs the string. */
     public String toString(){
-        if (On){
+        if (On){ /* Correction 1. */
             return "The fan speed is on and set at "+fanSpeed+". The fan is "+fanColor+" with a radius of "+fanRadius+" inches.";
         }
         else{
