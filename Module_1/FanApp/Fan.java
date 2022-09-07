@@ -25,10 +25,10 @@ Payne, D., (2021). CSD 405 Intermediate Java Programming. Bellevue University, a
 
 public class Fan{
 	/* These are the attributes of a Fan. */
-    private int fanSpeed = STOPPED;
-    private boolean On = false;
-    private double fanRadius = 6; /* Correction 3. */
-    String fanColor = "white"; /* Correction 2. */
+    private int speed = STOPPED;
+    private boolean on = false;
+    private double radius = 6; /* Correction 3. */
+    String color = "white"; /* Correction 2. */
 
     /* These are my constants for fan speed. */
     final static int STOPPED = 0;
@@ -38,65 +38,65 @@ public class Fan{
 
     /* This is the default constructor. */
     public Fan(){
-        int fanSpeed = STOPPED; /*Yellow is a warning. Code will work as intended. */
-        boolean On = false;
-        double fanRadius = 6;
-        String fanColor = "white";
+        int speed = STOPPED; /*Yellow is a warning. Code will work as intended. */
+        boolean on = false;
+        double radius = 6;
+        String color = "white";
     }
     /* End default Constructor. */
     /* This is an argument constructor. */
     public Fan(int Speed, boolean Power, double Radius, String Color){
-        int fanSpeed = Speed;/*Yellow is a warning. Code will work as intended. */
-        boolean On = Power;
-        double fanRadius = Radius;
-        String fanColor = Color;
+        int speed = Speed;/*Yellow is a warning. Code will work as intended. */
+        boolean on = Power;
+        double radius = Radius;
+        String color = Color;
     }
     /* End Argument Constructor. */
     /* Accessor Methods. */
 
     /* This method gets speed from default constructor. */
     public int getSpeed(){
-        return fanSpeed;
+        return speed;
     }
     /* This method gets boolean from default constructor. */
     public boolean isOn(){
-        return On;
+        return on;
     }
     /* This method gets radius from default constructor. */
     public double getRadius(){
-        return fanRadius;
+        return radius;
     }
     /* This method gets color from default constructor. */
     public String getColor(){
-        return fanColor;
+        return color;
     }
     /* End Accessor Methods. */
     /* Mutator Methods. */
     /* This method sets new fan speed based on new speed integer. */
     public void setSpeed (int newSpeed){
-        fanSpeed= newSpeed;
+        this.speed= newSpeed;
     }
     /* This method changes boolean based on new boolean field. */
-    public void turnOn (){
-        On = true;
+    public void setOn (){
+        this.on = true;
     }
     /* This method changes radius based on new radius integer. */
     public void setRadius (double newRadius){
-        fanRadius = newRadius;
+        this.radius = newRadius;
     }
     /* This method changes color based on new color string. */
     public void setColor (String newColor){
-        fanColor = newColor;
+        this.color = newColor;
     }
     /* End Mutator Methods. */
     /* toString method. */
     /* This allows changes to string based on if the boolean is true or false and outputs the string. */
     public String toString(){
-        if (On){ /* Correction 1. */
-            return "The fan speed is on and set at "+fanSpeed+". The fan is "+fanColor+" with a radius of "+fanRadius+" inches.";
+        if (on){ /* Correction 1. */
+            return "The fan speed is on and set at "+speed+". The fan is "+color+" with a radius of "+radius+" inches.";
         }
         else{
-            return "The fan is "+fanColor+" with a radius of "+fanRadius+" and the fan is off."; 
+            return "The fan is "+color+" with a radius of "+radius+" and the fan is off."; 
         }
     }/* End toString Method. */
     
