@@ -22,8 +22,8 @@ public class TestTeamApp{
         System.out.println("\n---Team Summary---");
         System.out.println("Number of players on team: " +newTeam.getPlayerCount());
         System.out.println("Players on team:");
-        String[] player = newTeam.getPlayers();
-        for (int i=0; i < newTeam.getPlayerCount(); i++)
+        String[] playersArray = players.split(",");
+        for (int i=0; i < newTeam.addPlayer(playersArray); i++)
             System.out.print(player[i] +", ");
 
         
