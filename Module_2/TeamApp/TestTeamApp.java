@@ -17,14 +17,11 @@ public class TestTeamApp{
         String players = userIn_02.nextLine();
 
         Team newTeam = new Team(teamName);
-        newTeam.addPlayer(players);
-        newTeam.getPlayers();
-        newTeam.getTeamName();
-        newTeam.getPlayerCount();
 
         System.out.println("---Team Summary---");
         System.out.println("Number of players on team: " +newTeam.getPlayerCount());
-        for (int i=0; i<newTeam.getPlayerCount(); i++)
+        String[] players = newTeam.getPlayers();
+        for (int i=0; i < newTeam.getPlayerCount(); i++)
             System.out.print(players[i] +", ");
 
         
