@@ -1,6 +1,6 @@
 package Module_2.TeamApp;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class TestTeamApp{
 
@@ -17,12 +17,14 @@ public class TestTeamApp{
         String players = userIn_02.nextLine();
 
         Team newTeam = new Team(teamName);
+        newTeam.addPlayer(players);
 
-        System.out.println("---Team Summary---");
+        System.out.println("\n---Team Summary---");
         System.out.println("Number of players on team: " +newTeam.getPlayerCount());
-        String[] players = newTeam.getPlayers();
+        System.out.println("Players on team:");
+        String[] player = newTeam.getPlayers();
         for (int i=0; i < newTeam.getPlayerCount(); i++)
-            System.out.print(players[i] +", ");
+            System.out.print(player[i] +", ");
 
         
     }
