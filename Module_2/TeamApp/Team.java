@@ -5,10 +5,8 @@ public class Team {
     private String[] players = new String[20];
     private int playerCount = 0;
 
-    public Team(String teamName, String[] players, int playerCount) {
+    public Team(String teamName) {
         this.teamName = teamName;
-        this.players = players;
-        this.playerCount = playerCount;
     }
 
     public void addPlayer(String player) {
