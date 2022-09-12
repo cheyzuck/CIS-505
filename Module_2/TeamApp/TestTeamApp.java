@@ -35,6 +35,9 @@ public class TestTeamApp{
             System.out.println("\nWould you like to continue? Please type 'y' or 'n'.");
             String userDecision = userIn_Continue.next(); 
             if (userDecision.equalsIgnoreCase("n")){;
+                System.out.println("");
+                System.out.println("End of line.");
+                System.out.println("");
                 break;
             }
         }

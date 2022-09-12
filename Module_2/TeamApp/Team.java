@@ -3,7 +3,7 @@ package Module_2.TeamApp;
 public class Team {
     private String teamName;
     private String[] players = new String[20];
-    private int playerCount;
+    private int playerCount = 0;
 
     public Team(String teamName) {
         this.teamName = teamName;
