@@ -45,7 +45,7 @@ public class TestTeamApp{
             System.out.print("  Players on team: "); /* This gives the player's names as they were entered continuously until there are no more names to give. */
             playerArray = newTeam.getPlayers();
             for (int i=0; i < newTeam.getPlayerCount(); i++){
-                System.out.print(playerArray[i] +", ");
+                System.out.print(playerArray[i]+ ", ");
             }
 
             System.out.println("");
