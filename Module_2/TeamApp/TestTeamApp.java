@@ -34,15 +34,19 @@ public class TestTeamApp{
 
             Team newTeam = new Team(teamName);
             newTeam.addPlayer(players); /* This adds the players to the team being built. */
-            String[] player = players.split(","); /* This splits the players into an array of players. */
+            String[] playerArray = players.split(","); /* This splits the players into an array of players. */
+            
+            for (String player:playerArray) /* This adds players to the team one at a time. */
+                newTeam.addPlayer(player);
 
             System.out.println("");
             System.out.println("  --Team Summary--");
             System.out.println("  Number of players on team: " + newTeam.getPlayerCount()); /* This returns the player count with the help of splitting the array of entered players. This is where I had the most trouble. */
             System.out.print("  Players on team: "); /* This gives the player's names as they were entered continuously until there are no more names to give. */
-            String[] playersArray = newTeam.getPlayers();
-            for (int i=0; i < newTeam.getPlayerCount(); i++)
-                System.out.print(playersArray[i] +", ");
+            playerArray = newTeam.getPlayers();
+            for (int i=0; i < newTeam.getPlayerCount(); i++){
+                System.out.print(playerArray[i] +", ");
+            }
 
             System.out.println("");
             Scanner userIn_Continue = new Scanner(System.in);
