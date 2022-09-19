@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.math.*;
 
 class Account {
-    private double balance = 200;
+    private double balance = 200.00;
     private double amt;
 
     public double getBalance(){

@@ -52,18 +52,20 @@ public class TestCustomerAccountApp {
                 customerAccount.getBalance();
             }
             else{
-                System.out.println("Error: Invalid Option.");
+                System.out.println("  Error: Invalid Option.");
             }
             Scanner userContinue = new Scanner(System.in);
-            System.out.print("Continue? y/n: ");
+            System.out.print("  Continue? y/n: ");
             String continueChoice = userContinue.next();
             if (continueChoice == "y"){
                 continue;
             }
             else{
-                customer.toString();
+                System.out.println("");
+                System.out.println(customer.toString());
                 System.out.println("");
                 System.out.println("  Balance as of "+customerAccount.getTransactionDate()+" is $"+customerAccount.getBalance());
+                break;
             }
         }           
         while (true);
