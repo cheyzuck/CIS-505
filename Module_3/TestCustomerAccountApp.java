@@ -15,35 +15,21 @@ public class TestCustomerAccountApp {
             Scanner userIn2 = new Scanner(System.in);
             customerAccount.displayMenu();
             String userSelection = userIn2.next();
-            if (userSelection == "D"){
+
+            if (userSelection.equals("D")||userSelection.equals("d")){
                 Scanner userDeposit = new Scanner(System.in);
                 System.out.print("  Enter deposit amount: ");
                 double amt = userDeposit.nextDouble();
                 customerAccount.deposit(amt);
             }
-            else if (userSelection == "d"){
-                Scanner userDeposit = new Scanner(System.in);
-                System.out.print("  Enter deposit amount: ");
-                double amt = userDeposit.nextDouble();
-                customerAccount.deposit(amt);
-            }
-            else if (userSelection == "W"){
+            else if (userSelection.equals("W")||userSelection.equals("w")){
                 Scanner userWithdraw = new Scanner(System.in);
                 System.out.print("  Enter withdraw amount: ");
                 double amt = userWithdraw.nextDouble();
                 customerAccount.withdraw(amt);
             }
-            else if (userSelection == "w"){
-                Scanner userWithdraw = new Scanner(System.in);
-                System.out.print("  Enter withdraw amount: ");
-                double amt = userWithdraw.nextDouble();
-                customerAccount.withdraw(amt);
-            }
-            else if (userSelection == "B"){
-                customerAccount.getBalance();
-            }
-            else if (userSelection == "b"){
-                customerAccount.getBalance();
+            else if (userSelection.equals("B")||userSelection.equals("b")){
+                System.out.println(customerAccount.getBalance());
             }
             else{
                 System.out.println("  Error: Invalid Option.");
@@ -51,10 +37,7 @@ public class TestCustomerAccountApp {
             Scanner userContinue = new Scanner(System.in);
             System.out.print("  Continue? y/n: ");
             String continueChoice = userContinue.next();
-            if (continueChoice == "y"){
-                continue;
-            }
-            else{
+            if (continueChoice.equals("n")){
                 System.out.println("");
                 System.out.println(customer.toString());
                 System.out.println("");
@@ -62,6 +45,9 @@ public class TestCustomerAccountApp {
                 System.out.println("");
                 System.out.println("  End of line...");
                 break;
+            }
+            if (continueChoice.equals("y")){
+                continue;
             }
         }           
         while (true);
