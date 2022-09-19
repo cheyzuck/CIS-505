@@ -56,6 +56,15 @@ public class TestCustomerAccountApp {
             }
             Scanner userContinue = new Scanner(System.in);
             System.out.print("Continue? y/n: ");
+            String continueChoice = userContinue.next();
+            if (continueChoice == "y"){
+                continue;
+            }
+            else{
+                customer.toString();
+                System.out.println("");
+                System.out.println("  Balance as of "+customerAccount.getTransactionDate()+" is $"+customerAccount.getBalance());
+            }
         }           
         while (true);
     }
