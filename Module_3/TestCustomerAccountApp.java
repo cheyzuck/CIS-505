@@ -40,15 +40,9 @@ public class TestCustomerAccountApp {
                 customerAccount.withdraw(amt);
             }
             else if (userSelection == "B"){
-                Scanner userBalance = new Scanner(System.in);
-                System.out.print("  Enter deposit amount: ");
-                double amt = userBalance.nextDouble();
                 customerAccount.getBalance();
             }
             else if (userSelection == "b"){
-                Scanner userBalance = new Scanner(System.in);
-                System.out.print("  Enter deposit amount: ");
-                double amt = userBalance.nextDouble();
                 customerAccount.getBalance();
             }
             else{
