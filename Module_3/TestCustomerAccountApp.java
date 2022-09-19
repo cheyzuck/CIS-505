@@ -3,17 +3,60 @@ package Module_3;
 import java.util.*;
 
 public class TestCustomerAccountApp {
-    public static void main(){
-        System.out.println("  Welcome to the Customer Account App");
+    public static void main(String[] args){
+        System.out.println("  Welcome to the Customer Account App\n");
         Scanner userIn = new Scanner(System.in);
-        System.out.print(" Please enter a customer ID:\n ex: 1007, 1008, 1009: ");
-        String id = userIn.next();
+        System.out.print(" Please enter a customer ID:\n   ex: 1007, 1008, 1009: ");
+        int id = userIn.nextInt();
         
-        Customer newCustomer = new Customer();
-        newCustomer.getCustomer(id);
-
-        
-        
+        Customer customer = CustomerDB.getCustomer(id);
+        do{
+            Account customerAccount = new Account();
+            Scanner userIn2 = new Scanner(System.in);
+            customerAccount.displayMenu();
+            String userSelection = userIn2.next();
+            if (userSelection == "D"){
+                Scanner userDeposit = new Scanner(System.in);
+                System.out.print("  Please enter deposit amount: ");
+                double amt = userDeposit.nextDouble();
+                customerAccount.deposit(amt);
+            }
+            else if (userSelection == "d"){
+                Scanner userDeposit = new Scanner(System.in);
+                System.out.print("  Please enter deposit amount: ");
+                double amt = userDeposit.nextDouble();
+                customerAccount.deposit(amt);
+            }
+            else if (userSelection == "W"){
+                Scanner userWithdraw = new Scanner(System.in);
+                System.out.print("  Please enter withdraw amount: ");
+                double amt = userWithdraw.nextDouble();
+                customerAccount.withdraw(amt);
+            }
+            else if (userSelection == "w"){
+                Scanner userWithdraw = new Scanner(System.in);
+                System.out.print("  Please enter withdraw amount: ");
+                double amt = userWithdraw.nextDouble();
+                customerAccount.withdraw(amt);
+            }
+            else if (userSelection == "B"){
+                Scanner userBalance = new Scanner(System.in);
+                System.out.print("  Please enter deposit amount: ");
+                double amt = userBalance.nextDouble();
+                customerAccount.getBalance();
+            }
+            else if (userSelection == "b"){
+                Scanner userBalance = new Scanner(System.in);
+                System.out.print("  Please enter deposit amount: ");
+                double amt = userBalance.nextDouble();
+                customerAccount.getBalance();
+            }
+            else{
+                System.out.println("Error: Invalid Option.");
+            }
+            Scanner userContinue = new Scanner(System.in);
+            System.out.print("Continue? y/n");
+        }           
+        while (true);
     }
-    
 }

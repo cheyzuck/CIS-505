@@ -24,10 +24,11 @@ class Account {
         }
     }
     public void displayMenu(){
+        System.out.println("");
         System.out.println("  Amount Menu\n  Enter <D/d> for deposit\n  Enter <W/w> for withdraw\n  Enter <B/b> for balance");
-        System.out.println("    Enter option: ");
+        System.out.println("    Enter option>: ");
     }
-    public String getTransitionDate(){
+    public String getTransactionDate(){
         SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd-yyyy");
         Date today = new Date();
         String outputDate = String.format(simpleDate.format(today));
