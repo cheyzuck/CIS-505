@@ -4,10 +4,10 @@ package Module_3;
 
 class Customer {
     /* These are the attributes of a customer. */
-    private String name;
-    private String address;
-    private String city;
-    private String zip;
+    private String name = "Jane Doe";
+    private String address = "1234 Main St.";
+    private String city = "New York";
+    private String zip = "10001";
 
     /* This is the default constructor. */
     public Customer(){
