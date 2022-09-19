@@ -65,6 +65,8 @@ public class TestCustomerAccountApp {
                 System.out.println(customer.toString());
                 System.out.println("");
                 System.out.println("  Balance as of "+customerAccount.getTransactionDate()+" is $"+customerAccount.getBalance());
+                System.out.println("");
+                System.out.println("  End of line...");
                 break;
             }
         }           
