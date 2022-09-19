@@ -17,37 +17,37 @@ public class TestCustomerAccountApp {
             String userSelection = userIn2.next();
             if (userSelection == "D"){
                 Scanner userDeposit = new Scanner(System.in);
-                System.out.print("  Please enter deposit amount: ");
+                System.out.print("  Enter deposit amount: ");
                 double amt = userDeposit.nextDouble();
                 customerAccount.deposit(amt);
             }
             else if (userSelection == "d"){
                 Scanner userDeposit = new Scanner(System.in);
-                System.out.print("  Please enter deposit amount: ");
+                System.out.print("  Enter deposit amount: ");
                 double amt = userDeposit.nextDouble();
                 customerAccount.deposit(amt);
             }
             else if (userSelection == "W"){
                 Scanner userWithdraw = new Scanner(System.in);
-                System.out.print("  Please enter withdraw amount: ");
+                System.out.print("  Enter withdraw amount: ");
                 double amt = userWithdraw.nextDouble();
                 customerAccount.withdraw(amt);
             }
             else if (userSelection == "w"){
                 Scanner userWithdraw = new Scanner(System.in);
-                System.out.print("  Please enter withdraw amount: ");
+                System.out.print("  Enter withdraw amount: ");
                 double amt = userWithdraw.nextDouble();
                 customerAccount.withdraw(amt);
             }
             else if (userSelection == "B"){
                 Scanner userBalance = new Scanner(System.in);
-                System.out.print("  Please enter deposit amount: ");
+                System.out.print("  Enter deposit amount: ");
                 double amt = userBalance.nextDouble();
                 customerAccount.getBalance();
             }
             else if (userSelection == "b"){
                 Scanner userBalance = new Scanner(System.in);
-                System.out.print("  Please enter deposit amount: ");
+                System.out.print("  Enter deposit amount: ");
                 double amt = userBalance.nextDouble();
                 customerAccount.getBalance();
             }
@@ -55,7 +55,7 @@ public class TestCustomerAccountApp {
                 System.out.println("Error: Invalid Option.");
             }
             Scanner userContinue = new Scanner(System.in);
-            System.out.print("Continue? y/n");
+            System.out.print("Continue? y/n: ");
         }           
         while (true);
     }
