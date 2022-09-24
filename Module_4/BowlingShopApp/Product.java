@@ -13,17 +13,17 @@ public class Product {
     }
 
     /* Accessor Methods. */
-    /* This returns the product code. */
+    /* This method returns the product code. */
     public String getCode(){
         return code;
     }
 
-    /* This returns the product description. */
+    /* This method returns the product description. */
     public String getDescription(){
         return description;
     }
 
-    /* This returns the product price. */
+    /* This method returns the product price. */
     public double getPrice(){
         return price;
     }
