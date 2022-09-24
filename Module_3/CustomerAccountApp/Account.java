@@ -23,14 +23,17 @@ class Account {
     /* This is a method that allows the user to make a deposit. */
     public void deposit(double amt){
         double newBalance = balance + amt;
+        this.balance = newBalance;
     }
     /* This is a method that allows the user to make a withdraw. */
     public void withdraw(double amt){
         if (balance>amt){
             double newBalance = balance - amt;
+            this.balance = newBalance;
         }
         else if (balance == amt){
             double newBalance = balance - amt;
+            this.balance = newBalance;
         }
     }
     /* This method displays the account menu. */
