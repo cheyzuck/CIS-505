@@ -15,6 +15,6 @@ public class Ball extends Product{
     }
 
     public String toString(){
-        return "  Color: "+getColor();
+        return "\n  Color: "+getColor();
     }
 }
