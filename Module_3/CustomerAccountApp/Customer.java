@@ -11,10 +11,6 @@ class Customer {
 
     /* This is the default constructor. */
     public Customer(){
-        String name = "Jane Doe";
-        String address = "1234 Main St.";
-        String city = "New York";
-        String zip = "10001";
     }
 
     /* This is a customer with arguments for all four string fields. */

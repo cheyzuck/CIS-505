@@ -15,6 +15,7 @@ class CustomerDB {
     static Customer customer1007 = new Customer("Joseph Biden", "1600 Pennsylvania Ave.", "Washington D.C.", "20500");
     static Customer customer1008 = new Customer("Darth Vader", "01 Death Star Way","Galactic Empire","00666");
     static Customer customer1009 = new Customer("Indiana Jones", "1981 Marshall College Way","Bedford", "10506");
+    static Customer defaultCustomer = new Customer();
 
     /* This is my getCustomer method with if/else if statements to return the unique customers based on matching the customer ID.*/
     public static Customer getCustomer(int id){
