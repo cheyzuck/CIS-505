@@ -18,7 +18,7 @@ public class TestBowlingShopApp {
         displayMenu();
         Scanner userIn = new Scanner(System.in);
         System.out.print("");
-        String userChoice = userIn.nextLine();
+        String userChoice = userIn.next();
 
     }
 }
