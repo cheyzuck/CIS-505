@@ -15,9 +15,8 @@ public class TestBowlingShopApp {
     }
 
     public static void main(String[] args){
-        displayMenu();
         Scanner userIn = new Scanner(System.in);
-        System.out.print("");
+        displayMenu();
         String userChoice = userIn.next();
 
     }
