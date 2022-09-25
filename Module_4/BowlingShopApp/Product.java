@@ -2,6 +2,9 @@
 
 package Module_4.BowlingShopApp;
 
+import java.util.*;
+import java.io.*;
+
 public class Product {
     /* These are the attributes of a product. */
     private String code;
@@ -46,6 +49,6 @@ public class Product {
 
     /* toString method. */
     public String toString(){
-        return "  --Product Listing--\n  Product Code: "+getCode()+"\n  Description: "+getDescription()+"\n  Price: "+getPrice();
+        return "  --Product Listing--\n  Product Code: "+getCode()+"\n  Description: "+getDescription()+"\n  Price: "+getPrice()+System.out.printf("$%,6.2f",price);
     }
 }/* End Product class. */
