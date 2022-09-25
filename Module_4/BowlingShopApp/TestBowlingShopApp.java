@@ -1,5 +1,7 @@
 package Module_4.BowlingShopApp;
 
+import java.util.*;
+
 public class TestBowlingShopApp {
     public static void displayMenu(){
         System.out.println("");
@@ -14,7 +16,9 @@ public class TestBowlingShopApp {
 
     public static void main(String[] args){
         displayMenu();
-        
+        Scanner userIn = new Scanner(System.in);
+        System.out.print("");
+        String userChoice = userIn.nextLine();
 
     }
 }
