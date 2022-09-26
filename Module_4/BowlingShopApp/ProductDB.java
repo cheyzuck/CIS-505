@@ -115,8 +115,8 @@ public class ProductDB{
             return shoes;
         }
         else{
-            GenericQueue<Product> products = new GenericQueue<Product>();
-            return products;
+            GenericQueue<Product> empty = new GenericQueue<Product>();
+            return empty;
         }
     }
 }
