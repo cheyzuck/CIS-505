@@ -2,10 +2,11 @@ package Module_4.BowlingShopApp;
 
 import java.util.*;
 
-public class ProductDB {
+public class ProductDB{
 
     public static GenericQueue<Product> getProducts(String code){
-        if (code.equalsIgnoreCase("b")){
+        if (code.equalsIgnoreCase("b"))
+        {
             Ball ball1 = new Ball();
             Ball ball2 = new Ball();
             Ball ball3 = new Ball();
@@ -43,8 +44,10 @@ public class ProductDB {
             balls.enqueue(ball3);
             balls.enqueue(ball4);
             balls.enqueue(ball5);
+            return balls;
         }
-        else if (code.equalsIgnoreCase("a")){
+        else if (code.equalsIgnoreCase("a"))
+        {
             Bag bag1 = new Bag();
             Bag bag2 = new Bag();
             Bag bag3 = new Bag();
@@ -68,8 +71,10 @@ public class ProductDB {
             bags.enqueue(bag1);
             bags.enqueue(bag2);
             bags.enqueue(bag3);
+            return bags;
         }
-        else if (code.equalsIgnoreCase("s")){
+        else if (code.equalsIgnoreCase("s"))
+        {
             Shoe shoe1 = new Shoe();
             Shoe shoe2 = new Shoe();
             Shoe shoe3 = new Shoe();
@@ -107,9 +112,11 @@ public class ProductDB {
             shoes.enqueue(shoe3);
             shoes.enqueue(shoe4);
             shoes.enqueue(shoe5);
+            return shoes;
         }
         else{
-            return 
+            GenericQueue<Product> products = new GenericQueue<Product>();
+            return products;
         }
     }
 }

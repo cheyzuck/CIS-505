@@ -21,9 +21,7 @@ public class TestBowlingShopApp {
         String userCode = userIn.next();
     
         GenericQueue<Product> products = ProductDB.getProducts(userCode);
-
-        while (products.size() >0){
-
+        System.out.println(products);
         }
     }
-}
+
