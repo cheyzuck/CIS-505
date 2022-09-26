@@ -16,12 +16,24 @@ public class TestBowlingShopApp {
     }
 
     public static void main(String[] args){
+        System.out.println("  Welcome to the Bowling Shop");
+        System.out.println("");
+        do{
         Scanner userIn = new Scanner(System.in);
         displayMenu();
         String userCode = userIn.next();
-    
-        GenericQueue<Product> products = ProductDB.getProducts(userCode);
-        System.out.println(products.toString());
+
+        if (userCode.equalsIgnoreCase("b")||userCode.equalsIgnoreCase("a")||userCode.equalsIgnoreCase("s")){
+            GenericQueue<Product> products = ProductDB.getProducts(userCode);
+            while(products.size() > 0){
+                products.dequeue();
+                products.toString();
+            }
+        } else if (userCode.equalsIgnoreCase("x")){
+            System.out.println("");
+            System.out.println("End of Line...");
         }
+        } while (true);
     }
+}
 
