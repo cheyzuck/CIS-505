@@ -47,7 +47,7 @@ public class TestBowlingShopApp { /* Begin BowlingShopTestApp. */
             System.out.println("  End of Line...");
             break;
         }
-        
+
         } while (true); /* This continues the do...while loop until the user breaks it. */
     }/* End main method. */
 } /* End TestBowlingShopApp. */
