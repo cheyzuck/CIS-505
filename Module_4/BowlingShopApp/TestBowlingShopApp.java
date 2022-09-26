@@ -28,11 +28,13 @@ public class TestBowlingShopApp { /* Begin BowlingShopTestApp. */
     public static void main(String[] args){ /* This is the main method. */
         System.out.println("  Welcome to the Bowling Shop");
         System.out.println("");
+
         do{ /* Begin do... while loop to allow user to choose when to exit. */
         Scanner userIn = new Scanner(System.in);
         displayMenu(); /* displayMenu. */
         String userCode = userIn.next();
         System.out.println("");
+
         /* This if helps break down userCode so that if they select one of our main 3 options, it will dequeue and print their product listings accordingly. */
         if (userCode.equalsIgnoreCase("b")||userCode.equalsIgnoreCase("a")||userCode.equalsIgnoreCase("s")){
             GenericQueue<Product> products = ProductDB.getProducts(userCode);
@@ -45,6 +47,7 @@ public class TestBowlingShopApp { /* Begin BowlingShopTestApp. */
             System.out.println("  End of Line...");
             break;
         }
+        
         } while (true); /* This continues the do...while loop until the user breaks it. */
     }/* End main method. */
 } /* End TestBowlingShopApp. */
