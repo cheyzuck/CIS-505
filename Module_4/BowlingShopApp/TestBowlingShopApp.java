@@ -1,6 +1,7 @@
 package Module_4.BowlingShopApp;
 
 import java.util.*;
+import java.io.*;
 
 public class TestBowlingShopApp {
     public static void displayMenu(){
@@ -17,7 +18,12 @@ public class TestBowlingShopApp {
     public static void main(String[] args){
         Scanner userIn = new Scanner(System.in);
         displayMenu();
-        String userChoice = userIn.next();
+        String userCode = userIn.next();
+    
+        GenericQueue<Product> products = ProductDB.getProducts(userCode);
 
+        while (products.size() >0){
+
+        }
     }
 }

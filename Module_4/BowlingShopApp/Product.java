@@ -2,9 +2,6 @@
 
 package Module_4.BowlingShopApp;
 
-import java.util.*;
-import java.io.*;
-
 public class Product {
     /* These are the attributes of a product. */
     private String code;
