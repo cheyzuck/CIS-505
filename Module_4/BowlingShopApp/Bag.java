@@ -24,6 +24,6 @@ public class Bag extends Product { /* Bag class extends Product (superclass). */
 
     /* This toString method additionally adds type to the toString method in the superclass. */
     public String toString(){
-        return "\n  Type: "+getType();
+        return super.toString() + "\n  Type: "+getType();
     }
 } /* End Bag class. */

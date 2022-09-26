@@ -23,6 +23,6 @@ public class Ball extends Product{ /* Ball class extends Product (superclass). *
     }
     /* This toString method additionally adds color to the toString method in the superclass. */
     public String toString(){
-        return "\n  Color: "+getColor();
+        return super.toString() + "\n  Color: "+getColor();
     }
 } /* End Ball class. */

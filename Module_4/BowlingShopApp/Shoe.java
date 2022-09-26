@@ -24,6 +24,6 @@ public class Shoe extends Product {/* Shoe class extends Product (superclass). *
 
     /* This toString method additionally adds size to the toString method in the superclass. */
     public String toString(){
-        return "  Shoe Size: "+getSize();
+        return super.toString() + "  Shoe Size: "+getSize();
     }
 }
