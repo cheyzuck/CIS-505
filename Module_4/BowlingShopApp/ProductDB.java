@@ -48,8 +48,6 @@ public class ProductDB {
             Bag bag1 = new Bag();
             Bag bag2 = new Bag();
             Bag bag3 = new Bag();
-            Bag bag4 = new Bag();
-            Bag bag5 = new Bag();
 
             bag1.setCode("A100");
             bag1.setDescription("Path Pro Deluxe");
@@ -111,9 +109,7 @@ public class ProductDB {
             shoes.enqueue(shoe5);
         }
         else{
-            GenericQueue<Product> empty = new GenericQueue<Product>();
-            return empty;
+            return 
         }
-        return null;
     }
 }
