@@ -27,11 +27,12 @@ public class TestBowlingShopApp {
             GenericQueue<Product> products = ProductDB.getProducts(userCode);
             while(products.size() > 0){
                 products.dequeue();
-                products.toString();
+                System.out.println(products.toString());
             }
         } else if (userCode.equalsIgnoreCase("x")){
             System.out.println("");
-            System.out.println("End of Line...");
+            System.out.println("  End of Line...");
+            break;
         }
         } while (true);
     }
