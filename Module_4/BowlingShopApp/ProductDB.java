@@ -6,8 +6,6 @@
 
 package Module_4.BowlingShopApp;
 
-import java.util.*;
-
 public class ProductDB{
 
     public static GenericQueue<Product> getProducts(String code){ /*Begin getProducts method. */
