@@ -1,4 +1,8 @@
-/* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. */
+/* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. 
+ 
+Liang, Y.D. (2019). Introduction to Java Programming and Data Structures: Comprehensive Version (12th ed.). Pearson Education, Inc.
+
+*/
 
 package Module_4.BowlingShopApp;
 
