@@ -10,7 +10,7 @@ public class Transaction {
     public Transaction(){
     }
 
-    public Transaction(String date, String description, double amount){
+    public Transaction(String description, double amount){
     }
 
     public void setDate(String newDate){
@@ -35,5 +35,4 @@ public class Transaction {
     public String toString(){
         return "  MONTHLY EXPENSES\n  Date: "+date+"\n  Description: "+description+"\n  Amount: "+amount;
     }
-
 }
