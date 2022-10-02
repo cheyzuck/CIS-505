@@ -14,8 +14,9 @@ public class TestExpenseTracker {
     }
     public static void main(String[] args){
         System.out.println("  Welcome to the Expense Tracker");
+        do{
         displayMenu();
-        Scanner userIn = new Scanner();
-        
+        Scanner userIn = new Scanner(System.in);
+        }
     }
 }
