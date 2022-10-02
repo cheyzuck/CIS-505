@@ -2,6 +2,7 @@ package Module_5.ExpenseTracker;
 
 import java.util.*;
 import java.io.*;
+import java.math.*;
 
 public class TestExpenseTracker {
 
@@ -42,6 +43,8 @@ public class TestExpenseTracker {
                 System.out.println("\n  Exception: " + e.getMessage());
             }
         } else if (input == 3){
+            double monthlyExpense;
+            ArrayList<Transaction> transactions = new ArrayList<>();
             TransactionIO.findAll();
             for (Transaction transaction : transactions){
                 monthlyExpense += transaction.getAmount();
