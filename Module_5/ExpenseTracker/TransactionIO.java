@@ -30,8 +30,7 @@ public class TransactionIO {
         while (input.hasNext()){
             for (Transaction tran : transactions){
                 
-        }
+            }
+        } 
     }
-
-    
 }
