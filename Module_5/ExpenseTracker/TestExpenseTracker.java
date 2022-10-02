@@ -33,7 +33,7 @@ public class TestExpenseTracker {
 
                 transactions.add(transaction);
 
-                c=ValidatorIO.getString(sc, "\n  Add another transaction? (y/n): ");
+                c = ValidatorIO.getString(sc, "\n  Add another transaction? (y/n): ");
             }
             try{
                 TransactionIO.bulkInsert(transactions);

@@ -27,10 +27,16 @@ public class TransactionIO {
 
     public static ArrayList<Transaction> findAll() throws IOException{
         Scanner input = new Scanner (FILE_NAME);
+        ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         while (input.hasNext()){
             for (Transaction tran : transactions){
-                
+                Transaction newTransaction = new Transaction();
+                newTransaction.getDate();
+                newTransaction.getDescription();
+                newTransaction.getAmount();
+                transactions.add(newTransaction);
             }
         } 
+        return transactions; 
     }
 }
