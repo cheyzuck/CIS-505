@@ -25,10 +25,11 @@ public class TransactionIO {
         output.close();
     }
 
-    public static ArrayList<Transaction> findAll(){
+    public static ArrayList<Transaction> findAll() throws IOException{
         Scanner input = new Scanner (FILE_NAME);
         while (input.hasNext()){
-            
+            for (Transaction tran : transactions){
+                
         }
     }
 
