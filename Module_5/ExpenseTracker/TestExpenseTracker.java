@@ -17,7 +17,7 @@ public class TestExpenseTracker {
         System.out.println("  Welcome to the Expense Tracker");
         do{
         menu();
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int input = ValidatorIO.getInt(sc, menu());
         if (input == 1){
             TransactionIO.findAll();
