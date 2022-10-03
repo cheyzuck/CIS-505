@@ -56,6 +56,6 @@ public class Transaction {
     }
     /* This overrides the toString method. */
     public String toString(){
-        return "  MONTHLY EXPENSES\n  Date: "+date+"\n  Description: "+description+"\n  Amount: "+String.format("$%6.2.f", amount);
+        return "  MONTHLY EXPENSES\n  Date: "+date+"\n  Description: "+description+"\n  Amount: "+String.format("$%6.2f", amount);
     }
 }/* End Transaction class. */

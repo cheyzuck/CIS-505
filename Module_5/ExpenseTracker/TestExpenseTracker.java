@@ -52,7 +52,7 @@ public class TestExpenseTracker {
                 for (Transaction transaction : transactions){
                     monthlyExpense += transaction.getAmount();
                 }
-                System.out.println("  Your total monthly expense is "+ String.format("$%,6.2.f", monthlyExpense));
+                System.out.println("  Your total monthly expense is "+ String.format("$%6.2f", monthlyExpense));
             } else if (input != 1|| input !=2||input !=3){
                 System.out.print("  Error! Invalid option.");
             }
