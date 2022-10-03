@@ -29,7 +29,7 @@ public class TransactionIO {
         Scanner input = new Scanner (FILE_NAME);
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         while (input.hasNext()){
-            for (Transaction tran : transactions){
+            for (Transaction transaction : transactions){
                 Transaction newTransaction = new Transaction();
                 newTransaction.getDate();
                 newTransaction.getDescription();

@@ -7,12 +7,12 @@ import java.math.*;
 public class TestExpenseTracker {
 
     public static String menu(){
-        System.out.println("");
         System.out.println("  MENU OPTIONS");
         System.out.println("    1. View Transactions");
         System.out.println("    2. Add Transactions");
         System.out.println("    3. View Expense");
-        return "  Please choose an option: ";
+        System.out.print("  Please choose an option: ");
+        return " ";
     }
     public static void main(String[] args) throws IOException{
         System.out.println("  Welcome to the Expense Tracker");
@@ -22,6 +22,7 @@ public class TestExpenseTracker {
             int input = ValidatorIO.getInt(sc, menu());
             if (input == 1){
                 TransactionIO.findAll();
+                System.out.println(TransactionIO.findAll());
             } else if (input == 2){
                 String c = "y";
                 ArrayList<Transaction> transactions = new ArrayList<>();
@@ -51,14 +52,16 @@ public class TestExpenseTracker {
             } else if (input != 1|| input !=2||input !=3){
                 System.out.print("  Error! Invalid option.");
             }
-            System.out.print("  Continue? (y/n): ");
             System.out.println("");
+            System.out.print("  Continue? (y/n): ");
             Scanner userContinue = new Scanner(System.in);
             String continueChoice = userContinue.next();
+            System.out.println("");
             if (continueChoice.equalsIgnoreCase("n")){
                 System.out.println("");
                 System.out.println("  Program terminated by user...");
                 System.out.println("");
+                break;
             } else if (continueChoice.equalsIgnoreCase("y")){
                 continue;
             }
