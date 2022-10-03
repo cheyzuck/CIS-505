@@ -7,49 +7,61 @@ import java.math.*;
 public class TestExpenseTracker {
 
     public static String menu(){
+        System.out.println("");
         System.out.println("  MENU OPTIONS");
         System.out.println("    1. View Transactions");
         System.out.println("    2. Add Transactions");
         System.out.println("    3. View Expense");
-        System.out.print("  Please choose an option: ");
-        return null;
+        return "  Please choose an option: ";
     }
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         System.out.println("  Welcome to the Expense Tracker");
+        System.out.println("");
         do{
-        menu();
-        Scanner sc = new Scanner(System.in);
-        int input = ValidatorIO.getInt(sc, menu());
-        if (input == 1){
-            TransactionIO.findAll();
-        } else if (input == 2){
-            String c = "y";
-            ArrayList<Transaction> transactions = new ArrayList<>();
+            Scanner sc = new Scanner(System.in);
+            int input = ValidatorIO.getInt(sc, menu());
+            if (input == 1){
+                TransactionIO.findAll();
+            } else if (input == 2){
+                String c = "y";
+                ArrayList<Transaction> transactions = new ArrayList<>();
 
-            while (c.equalsIgnoreCase("y")){
-                String description = ValidatorIO.getString(sc, "\n  Enter the description: ");
-                double amount = ValidatorIO.getDouble(sc, "  Enter the amount: ");
+                while (c.equalsIgnoreCase("y")){
+                    String description = ValidatorIO.getString(sc, "\n  Enter the description: ");
+                    double amount = ValidatorIO.getDouble(sc, "  Enter the amount: ");
                 
-                Transaction transaction = new Transaction(description, amount);
+                    Transaction transaction = new Transaction(description, amount);
 
-                transactions.add(transaction);
+                    transactions.add(transaction);
 
-                c = ValidatorIO.getString(sc, "\n  Add another transaction? (y/n): ");
+                    c = ValidatorIO.getString(sc, "\n  Add another transaction? (y/n): ");
+                }try{
+                    TransactionIO.bulkInsert(transactions);
+                } catch (IOException e){
+                    System.out.println("\n  Exception: " + e.getMessage());
+                }
+            } else if (input == 3){
+                double monthlyExpense = 0;
+                ArrayList<Transaction> transactions = new ArrayList<>();
+                TransactionIO.findAll();
+                for (Transaction transaction : transactions){
+                    monthlyExpense += transaction.getAmount();
+                }
+                System.out.println("  Your total monthly expense is "+ monthlyExpense);
+            } else if (input != 1|| input !=2||input !=3){
+                System.out.print("  Error! Invalid option.");
             }
-            try{
-                TransactionIO.bulkInsert(transactions);
+            System.out.print("  Continue? (y/n): ");
+            System.out.println("");
+            Scanner userContinue = new Scanner(System.in);
+            String continueChoice = userContinue.next();
+            if (continueChoice.equalsIgnoreCase("n")){
+                System.out.println("");
+                System.out.println("  Program terminated by user...");
+                System.out.println("");
+            } else if (continueChoice.equalsIgnoreCase("y")){
+                continue;
             }
-            catch (IOException e){
-                System.out.println("\n  Exception: " + e.getMessage());
-            }
-        } else if (input == 3){
-            double monthlyExpense;
-            ArrayList<Transaction> transactions = new ArrayList<>();
-            TransactionIO.findAll();
-            for (Transaction transaction : transactions){
-                monthlyExpense += transaction.getAmount();
-            }
-        }
-        }
+        } while (true);
     }
 }
