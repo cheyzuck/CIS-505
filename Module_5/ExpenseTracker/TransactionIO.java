@@ -18,9 +18,9 @@ public class TransactionIO {
         }
 
         for (Transaction tran : transactions){
-            output.print(tran.getDate() + " ");
-            output.print(tran.getDescription() + " ");
-            output.println(tran.getAmount());
+            output.println("  "+ tran.getDate() + " ");
+            output.println("  "+ tran.getDescription() + " ");
+            output.println("  "+ tran.getAmount());
         }
         output.close();
     }

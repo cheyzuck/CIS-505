@@ -33,6 +33,6 @@ public class Transaction {
         return amount;
     }
     public String toString(){
-        return "  MONTHLY EXPENSES\n  Date: "+date+"\n  Description: "+description+"\n  Amount: "+amount;
+        return "  MONTHLY EXPENSES\n  Date: "+date+"\n  Description: "+description+"\n  Amount: "+String.format("$%,6.2.f", amount);
     }
 }
