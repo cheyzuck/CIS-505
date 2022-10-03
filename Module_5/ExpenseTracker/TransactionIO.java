@@ -35,6 +35,7 @@ public class TransactionIO {
                 newTransaction.getDescription();
                 newTransaction.getAmount();
                 transactions.add(newTransaction);
+                System.out.println(newTransaction.toString());
             }
         } 
         return transactions; 
