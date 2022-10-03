@@ -1,9 +1,12 @@
 package Module_5.ExpenseTracker;
 
 import java.text.*;
+import java.util.*;
 
 public class Transaction {
-    private String date;
+    SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd-yyyy");
+    Date today = new Date();
+    private String date = String.format(simpleDate.format(today));
     private String description;
     private double amount = 0;
 
