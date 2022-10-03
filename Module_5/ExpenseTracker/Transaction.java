@@ -3,9 +3,9 @@ package Module_5.ExpenseTracker;
 import java.text.*;
 
 public class Transaction {
-    private static String date;
-    private static String description;
-    private static double amount = 0;
+    private String date;
+    private String description;
+    private double amount = 0;
 
     public Transaction(){
     }

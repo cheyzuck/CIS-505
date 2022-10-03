@@ -29,15 +29,10 @@ public class TransactionIO {
         Scanner input = new Scanner (FILE_NAME);
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         while (input.hasNext()){
-            for (Transaction transaction : transactions){
-                Transaction newTransaction = new Transaction();
-                newTransaction.getDate();
-                newTransaction.getDescription();
-                newTransaction.getAmount();
-                transactions.add(newTransaction);
-                System.out.println(newTransaction.toString());
-            }
-        } 
+            Transaction newTransaction = new Transaction();
+            transactions.add(newTransaction);
+            System.out.println(newTransaction.toString());
+            } 
         return transactions; 
     }
 }
