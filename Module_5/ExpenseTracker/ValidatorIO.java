@@ -48,6 +48,7 @@ public class ValidatorIO {
         }
         return input;
     }
+    
     public static String getString(Scanner sc, String prompt){
         String input = "0";
 
