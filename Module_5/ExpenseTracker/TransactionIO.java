@@ -36,6 +36,7 @@ public class TransactionIO {
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         while (input.hasNext()){
             System.out.println(input.next());
+            transactions.add(new Transaction());
         } 
         return transactions; 
     }
