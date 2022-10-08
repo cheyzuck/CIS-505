@@ -24,7 +24,10 @@ public class Transaction {
     }
 
     /* This is an argument constructor. */
-    public Transaction(String date, String description, double amount){
+    public Transaction(String Date, String Description, double Amount){
+        String date = Date;
+        String description = Description;
+        double amount = Amount;
     }
 
     /* Mutator Methods. */

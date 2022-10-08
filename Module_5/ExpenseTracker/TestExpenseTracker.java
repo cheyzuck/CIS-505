@@ -12,6 +12,7 @@ package Module_5.ExpenseTracker;
 import java.util.*;
 import java.io.*;
 import java.math.*;
+import java.text.SimpleDateFormat;
 
 public class TestExpenseTracker { /* Begin TestExpenseTracker class. */
 
@@ -42,10 +43,12 @@ public class TestExpenseTracker { /* Begin TestExpenseTracker class. */
                 String c = "y";
 
                 while (c.equalsIgnoreCase("y")){
+                    SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd-yyyy");
+                    String date = simpleDate.format(new Date());
                     String description = ValidatorIO.getString(sc, "\n  Enter the description: ");
                     double amount = ValidatorIO.getDouble(sc, "  Enter the amount: ");
 
-                    transactions.add(new Transaction(description, amount));
+                    transactions.add(new Transaction(date, description, amount));
 
                     c = ValidatorIO.getString(sc, "\n  Add another transaction? (y/n): ");
                 }try{ /* This tries the add those transactions to the file. */
