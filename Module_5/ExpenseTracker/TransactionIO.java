@@ -45,9 +45,10 @@ public class TransactionIO { /* Begin Transaction IO Class. */
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         /* This while loop iterates through the transactions and returns them to the program. */
         while (input.hasNext()){
-            transactions.add(new Transaction());
+            Transaction transaction = new Transaction();
+            transactions.add(transaction);
             System.out.println(input.next());
-        } 
+        }
         return transactions; 
     }
 }/* End Transaction IO Class. */
