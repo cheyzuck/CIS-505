@@ -37,7 +37,6 @@ public class TestExpenseTracker { /* Begin TestExpenseTracker class. */
             int input = ValidatorIO.getInt(sc, menu()); /* This validates user input. */
             /* Begin if... else if... statement to attest to the three possibilities in the menu. */
             if (input == 1){
-                TransactionIO.findAll();
                 System.out.println(TransactionIO.findAll()); /* This should show all transactions in file. */
             } else if (input == 2){ /* This allows the user to enter any number of transactions. */
                 String c = "y";
@@ -45,10 +44,16 @@ public class TestExpenseTracker { /* Begin TestExpenseTracker class. */
                 while (c.equalsIgnoreCase("y")){
                     SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd-yyyy");
                     String date = simpleDate.format(new Date());
+
                     String description = ValidatorIO.getString(sc, "\n  Enter the description: ");
                     double amount = ValidatorIO.getDouble(sc, "  Enter the amount: ");
 
-                    transactions.add(new Transaction(date, description, amount));
+                    Transaction transaction = new Transaction();
+                    transaction.setDate(date);
+                    transaction.setDescription(description);
+                    transaction.setAmount(amount);
+
+                    transactions.add(transaction);
 
                     c = ValidatorIO.getString(sc, "\n  Add another transaction? (y/n): ");
                 }try{ /* This tries the add those transactions to the file. */
