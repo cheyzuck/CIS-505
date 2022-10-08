@@ -20,7 +20,7 @@ public class TestBowlingShopApp { /* Begin BowlingShopTestApp. */
         System.out.println("    1. <b> Bowling Balls");
         System.out.println("    2. <a> Bowling Bags");
         System.out.println("    3. <s> Bowling Shoes");
-        System.out.println("    4. <x> Bowling Balls");
+        System.out.println("    4. <x> To exit");
         System.out.println("");
         System.out.print("  Please choose an option: ");
     }
@@ -39,8 +39,7 @@ public class TestBowlingShopApp { /* Begin BowlingShopTestApp. */
         if (userCode.equalsIgnoreCase("b")||userCode.equalsIgnoreCase("a")||userCode.equalsIgnoreCase("s")){
             GenericQueue<Product> products = ProductDB.getProducts(userCode);
             while(products.size() > 0){
-                products.dequeue();
-                System.out.println(products.toString()); /* This is where things got wonky. I could not figure out where the toString got lost. */
+                System.out.println(products.dequeue());
             }
         } else if (userCode.equalsIgnoreCase("x")){ /* This condition allows them to exit the loop. */
             System.out.println("");

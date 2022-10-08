@@ -50,6 +50,6 @@ public class Product {
 
     /* toString method. */
     public String toString(){
-        return "  --Product Listing--\n  Product Code: "+getCode()+"\n  Description: "+getDescription()+"\n  Price: "+getPrice()+System.out.printf("$%,6.2f",price);
+        return "  --Product Listing--\n  Product Code: "+getCode()+"\n  Description: "+getDescription()+"\n  Price: " + String.format("$%,6.2f",getPrice());
     }
 }/* End Product class. */

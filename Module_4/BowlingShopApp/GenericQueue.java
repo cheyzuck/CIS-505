@@ -15,8 +15,8 @@ public class GenericQueue<E> {
         list.addFirst(item);
     }
     /* This method removes an item from the queue. */
-    public void dequeue(){
-        list.removeFirst();
+    public Object dequeue(){
+        return list.removeFirst();
     }
     /* This method returns the size of the queue. */
     public int size(){
