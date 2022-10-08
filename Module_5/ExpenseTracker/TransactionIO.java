@@ -30,10 +30,10 @@ public class TransactionIO { /* Begin Transaction IO Class. */
         }
 
         /* This iterates through transactions and adds them to the file. */
-        for (Transaction tran : transactions){
-            output.print("  "+ tran.getDate() + " ");
-            output.print("  "+ tran.getDescription() + " ");
-            output.println("  "+ tran.getAmount());
+        for (Transaction transaction : transactions){
+            output.print("  "+ transaction.getDate());
+            output.print("  "+ transaction.getDescription());
+            output.println("  "+ transaction.getAmount());
         }
         /* This closes the output stream. */
         output.close();
@@ -45,8 +45,8 @@ public class TransactionIO { /* Begin Transaction IO Class. */
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         /* This while loop iterates through the transactions and returns them to the program. */
         while (input.hasNext()){
-            System.out.println(input.next());
             transactions.add(new Transaction());
+            System.out.println(input.next());
         } 
         return transactions; 
     }
