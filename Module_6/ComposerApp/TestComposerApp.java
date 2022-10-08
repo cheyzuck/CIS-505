@@ -1,5 +1,7 @@
 package Module_6.ComposerApp;
 
+import java.util.*;
+
 public class TestComposerApp {
     public static void displayMenu(){
         System.out.println("  MENU OPTIONS");
@@ -14,6 +16,28 @@ public class TestComposerApp {
     public static void main(String[] args){
         System.out.println("  Welcome to the Composer App");
         displayMenu();
-        
+        do{
+        Scanner input = new Scanner(System.in);
+        int userInput = input.nextInt();
+
+        if (userInput == 1){
+
+        }
+        else if (userInput == 2){
+
+        }
+        else if (userInput == 3){
+
+        }
+        else if (userInput == 4){
+            System.out.println("");
+            System.out.println("  Session terminated by user...")
+            System.out.println("");
+            break;
+        }
+        else if (userInput != 1 || userInput !=2 || userInput !=3 || userInput != 4){
+            System.out.println("  Error! Invalid input.");
+        }
+        } while (true);
     }
 }
