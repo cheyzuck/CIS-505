@@ -80,7 +80,6 @@ public class TestComposerApp {
                 System.out.println("");
                 break;
             } else if (continueChoice.equalsIgnoreCase("y")){
-
                 continue;
             }
         } while (true);
