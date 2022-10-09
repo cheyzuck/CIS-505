@@ -33,7 +33,7 @@ public class TestComposerApp {
                 int id = userID.nextInt();
                 MemComposerDao composer = new MemComposerDao();
                 System.out.println("");
-                composer.findBy(id);
+                System.out.println(composer.findBy(id));
             }
             else if (userInput == 3){
                 String cont = "y";
@@ -53,9 +53,10 @@ public class TestComposerApp {
                     String genre = userGenre.nextLine();
 
                     MemComposerDao composers = new MemComposerDao();
-                    composers.insert();
+                    Composer newComposer = new Composer(id, name, genre);
+                    composers.insert(newComposer);
             
-                    System.out.println("    Add another composer? (y/n) ");
+                    System.out.print("    Add another composer? (y/n) ");
                     Scanner userCont = new Scanner(System.in);
                     cont = userCont.nextLine();
                 }
@@ -71,8 +72,8 @@ public class TestComposerApp {
             }
             System.out.println("");
             System.out.print("  Continue? y/n: ");
-            System.out.println("");
             Scanner userContinue = new Scanner(System.in);
+            System.out.println("");
             String continueChoice = userContinue.nextLine();
             if (continueChoice.equalsIgnoreCase("n")){
                 System.out.println("");

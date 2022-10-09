@@ -31,9 +31,8 @@ public class MemComposerDao {
         return composer;
     }
 
-    public Composer insert(){
-        Composer composer = new Composer();
-        composers.add(composer);
-        return composer;
+    public Composer insert(Composer newComposer){
+        composers.add(newComposer);
+        return newComposer;
     }
 }
