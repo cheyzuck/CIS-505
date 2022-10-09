@@ -15,48 +15,74 @@ public class TestComposerApp {
 
     public static void main(String[] args){
         System.out.println("  Welcome to the Composer App");
-        displayMenu();
+        System.out.println("");
         do{
-        Scanner input = new Scanner(System.in);
-        int userInput = input.nextInt();
+            displayMenu();
+            Scanner input = new Scanner(System.in);
+            int userInput = input.nextInt();
 
-        if (userInput == 1){
+            if (userInput == 1){
+                System.out.println("");
+                MemComposerDao composer = new MemComposerDao();
+                System.out.println(composer.findAll());
+            }
+            else if (userInput == 2){
+                System.out.println("");
+                System.out.print("  Enter an id: ");
+                Scanner userID = new Scanner(System.in);
+                int id = userID.nextInt();
+                MemComposerDao composer = new MemComposerDao();
+                System.out.println("");
+                composer.findBy(id);
+            }
+            else if (userInput == 3){
+                String cont = "y";
+
+                while (cont.equalsIgnoreCase("y")){
+                    System.out.println("");
+                    System.out.print("  Enter an ID: ");
+                    Scanner userID = new Scanner(System.in);
+                    int id = userID.nextInt();
+
+                    System.out.print("  Enter a name: ");
+                    Scanner userName = new Scanner(System.in);
+                    String name = userName.nextLine();
+
+                    System.out.print("  Enter a genre: ");
+                    Scanner userGenre = new Scanner(System.in);
+                    String genre = userGenre.nextLine();
+
+                    MemComposerDao composers = new MemComposerDao();
+                    composers.insert();
+            
+                    System.out.println("    Add another composer? (y/n) ");
+                    Scanner userCont = new Scanner(System.in);
+                    cont = userCont.nextLine();
+                }
+            }
+            else if (userInput == 4){
+                System.out.println("");
+                System.out.println("  Session terminated by user...");
+                System.out.println("");
+                break;
+            }
+            else if (userInput != 1 || userInput !=2 || userInput !=3 || userInput != 4){
+                System.out.println("  Error! Invalid input.");
+            }
             System.out.println("");
-            MemComposerDao composer = new MemComposerDao();
-            System.out.println(composer.findAll());
-        }
-        else if (userInput == 2){
-            Scanner userID = new Scanner(System.in);
-            int id = userID.nextInt();
-            MemComposerDao composer = new MemComposerDao();
-            composer.findBy(id);
-        }
-        else if (userInput == 3){
-            System.out.print("  Enter an ID: ");
-            Scanner userID = new Scanner(System.in);
-            System.out.print("  Enter a name: ");
-            Scanner userName = new Scanner(System.in);
-            System.out.print("  Enter a genre: ");
-            Scanner userGenre = new Scanner(System.in);
-
-            int id = userID.nextInt();
-            String name = userName.nextLine();
-            String genre = userGenre.nextLine();
-
-            MemComposerDao composer = new MemComposerDao();
-            composer.insert();
-
-
-        }
-        else if (userInput == 4){
+            System.out.print("  Continue? y/n: ");
             System.out.println("");
-            System.out.println("  Session terminated by user...");
-            System.out.println("");
-            break;
-        }
-        else if (userInput != 1 || userInput !=2 || userInput !=3 || userInput != 4){
-            System.out.println("  Error! Invalid input.");
-        }
+            Scanner userContinue = new Scanner(System.in);
+            String continueChoice = userContinue.nextLine();
+            if (continueChoice.equalsIgnoreCase("n")){
+                System.out.println("");
+                System.out.println("  Program terminated by user...");
+                System.out.println("");
+                break;
+            } else if (continueChoice.equalsIgnoreCase("y")){
+
+                continue;
+            }
         } while (true);
     }
 }
