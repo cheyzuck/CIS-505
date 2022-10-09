@@ -21,6 +21,7 @@ public class TestComposerApp {
         int userInput = input.nextInt();
 
         if (userInput == 1){
+            System.out.println("");
             MemComposerDao composer = new MemComposerDao();
             System.out.println(composer.findAll());
         }
