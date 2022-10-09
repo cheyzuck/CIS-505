@@ -24,8 +24,8 @@ public class MemComposerDao {
     }
     public Composer findBy(int id){
         System.out.println("  --DISPLAYING COMPOSERS--");
-        Composer composer = new Composer();;
-        
+        Composer composer = new Composer();
+
 
         }
         return composer;
