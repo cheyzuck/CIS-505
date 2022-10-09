@@ -9,6 +9,7 @@ public class MemComposerDao {
     }
 
     public List<Composer> findAll(){
+        System.out.println("  --DISPLAYING COMPOSERS--");
         return composers;
     }
     public Composer findBy(int id){
@@ -17,7 +18,8 @@ public class MemComposerDao {
     }
 
     public Composer insert(){
-        
+        Composer composer = new Composer();
+        composers.add(composer);
+        return composer;
     }
-
 }

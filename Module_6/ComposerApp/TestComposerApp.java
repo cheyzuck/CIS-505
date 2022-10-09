@@ -21,12 +21,30 @@ public class TestComposerApp {
         int userInput = input.nextInt();
 
         if (userInput == 1){
-            
+            MemComposerDao composer = new MemComposerDao();
+            System.out.println(composer.findAll());
         }
         else if (userInput == 2){
-
+            Scanner userID = new Scanner(System.in);
+            int id = userID.nextInt();
+            MemComposerDao composer = new MemComposerDao();
+            composer.findBy(id);
         }
         else if (userInput == 3){
+            System.out.print("  Enter an ID: ");
+            Scanner userID = new Scanner(System.in);
+            System.out.print("  Enter a name: ");
+            Scanner userName = new Scanner(System.in);
+            System.out.print("  Enter a genre: ");
+            Scanner userGenre = new Scanner(System.in);
+
+            int id = userID.nextInt();
+            String name = userName.nextLine();
+            String genre = userGenre.nextLine();
+
+            MemComposerDao composer = new MemComposerDao();
+            composer.insert();
+
 
         }
         else if (userInput == 4){
