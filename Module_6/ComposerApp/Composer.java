@@ -24,6 +24,6 @@ public class Composer {
     }
 
     public String toString(){
-        return "    ID: " +id+ "\n    Name: " +name+ "\n    Genre: " +genre;
+        return "    ID: " +id+ "\n    Name: " +name+ "\n    Genre: " +genre+"\n";
     }
 }
