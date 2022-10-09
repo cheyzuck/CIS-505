@@ -21,7 +21,7 @@ public class TestComposerApp {
         int userInput = input.nextInt();
 
         if (userInput == 1){
-
+            
         }
         else if (userInput == 2){
 
@@ -31,7 +31,7 @@ public class TestComposerApp {
         }
         else if (userInput == 4){
             System.out.println("");
-            System.out.println("  Session terminated by user...")
+            System.out.println("  Session terminated by user...");
             System.out.println("");
             break;
         }
