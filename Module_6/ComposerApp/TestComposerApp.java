@@ -23,8 +23,8 @@ public class TestComposerApp {
 
             if (userInput == 1){
                 System.out.println("");
-                MemComposerDao composer = new MemComposerDao();
-                System.out.println(composer.findAll());
+                MemComposerDao composers = new MemComposerDao();
+                System.out.println(composers.findAll());
             }
             else if (userInput == 2){
                 System.out.println("");
@@ -56,7 +56,8 @@ public class TestComposerApp {
                     Composer newComposer = new Composer(id, name, genre);
                     composers.insert(newComposer);
             
-                    System.out.print("    Add another composer? (y/n) ");
+                    System.out.println("");
+                    System.out.print("  Add another composer? (y/n): ");
                     Scanner userCont = new Scanner(System.in);
                     cont = userCont.nextLine();
                 }
@@ -73,8 +74,9 @@ public class TestComposerApp {
             System.out.println("");
             System.out.print("  Continue? y/n: ");
             Scanner userContinue = new Scanner(System.in);
-            System.out.println("");
+            System.out.print("");
             String continueChoice = userContinue.nextLine();
+            System.out.println("");
             if (continueChoice.equalsIgnoreCase("n")){
                 System.out.println("");
                 System.out.println("  Program terminated by user...");
