@@ -2,10 +2,11 @@ package Module_6.ComposerApp;
 
 import java.util.*;
 
-public class MemComposerDao {
-    private List<Composer> composers = new ArrayList<>();
+public class MemComposerDao implements ComposerDao{
+    private List<Composer> composers;
 
     public MemComposerDao(){
+        composers = new ArrayList<>();
         Composer composer1 = new Composer(1007,"Ludwig Van Beethoven","Classical");
         Composer composer2 = new Composer(1008, "Johann Sebastian Bach", "Classical");
         Composer composer3 = new Composer(1009, "Wolfgang Amadeus Mozart", "Classical");
@@ -16,13 +17,15 @@ public class MemComposerDao {
         composers.add(composer3);
         composers.add(composer4);
         composers.add(composer5);
-    }
 
+    }
+    @Override
     public List<Composer> findAll(){
         System.out.println("  --DISPLAYING COMPOSERS--");
         return composers;
     }
-    public Composer findBy(int id){
+    @Override
+    public Composer findBy(Integer id){
         System.out.println("  --DISPLAYING COMPOSERS--");
         Composer composer = new Composer();
 
@@ -30,9 +33,11 @@ public class MemComposerDao {
     
         return composer;
     }
-
-    public Composer insert(Composer newComposer){
+    @Override
+    public void insert(Composer newComposer){
+        List<Composer> composers = new ArrayList<>();
         composers.add(newComposer);
-        return newComposer;
     }
-}
+
+    }
+
