@@ -35,7 +35,6 @@ public class MemComposerDao implements ComposerDao{
     }
     @Override
     public void insert(Composer newComposer){
-        List<Composer> composers = new ArrayList<Composer>();
         composers.add(newComposer);
     }
 }

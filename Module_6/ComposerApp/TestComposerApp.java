@@ -14,6 +14,8 @@ public class TestComposerApp {
     }
 
     public static void main(String[] args){
+        MemComposerDao composers = new MemComposerDao();
+
         System.out.println("  Welcome to the Composer App");
         System.out.println("");
         do{
@@ -23,7 +25,6 @@ public class TestComposerApp {
 
             if (userInput == 1){
                 System.out.println("");
-                MemComposerDao composers = new MemComposerDao();
                 System.out.println(composers.findAll());
             }
             else if (userInput == 2){
@@ -31,9 +32,8 @@ public class TestComposerApp {
                 System.out.print("  Enter an id: ");
                 Scanner userID = new Scanner(System.in);
                 int id = userID.nextInt();
-                MemComposerDao composer = new MemComposerDao();
                 System.out.println("");
-                System.out.println(composer.findBy(id));
+                System.out.println(composers.findBy(id));
             }
             else if (userInput == 3){
                 String cont = "y";
@@ -52,7 +52,6 @@ public class TestComposerApp {
                     Scanner userGenre = new Scanner(System.in);
                     String genre = userGenre.nextLine();
 
-                    MemComposerDao composers = new MemComposerDao();
                     Composer newComposer = new Composer(id, name, genre);
                     composers.insert(newComposer);
             
