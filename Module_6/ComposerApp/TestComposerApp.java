@@ -78,7 +78,7 @@ public class TestComposerApp {
             System.out.println("");
             if (continueChoice.equalsIgnoreCase("n")){
                 System.out.println("");
-                System.out.println("  Program terminated by user...");
+                System.out.println("  Session terminated by user...");
                 System.out.println("");
                 break;
             } else if (continueChoice.equalsIgnoreCase("y")){

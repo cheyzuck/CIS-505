@@ -27,15 +27,20 @@ public class MemComposerDao implements ComposerDao{
     @Override
     public Composer findBy(Integer id){
         System.out.println("  --DISPLAYING COMPOSERS--");
-        Composer composer = new Composer();
-
-
-    
-        return composer;
+        for (Composer composer : composers){
+            if (id.equals(composer.getId())){
+                return composer;
+            } else {
+                Composer emptyComposer = new Composer();
+                return emptyComposer;
+            }
+        }
+        return null;
     }
     @Override
     public void insert(Composer newComposer){
         composers.add(newComposer);
     }
 }
+
 
