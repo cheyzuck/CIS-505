@@ -6,5 +6,5 @@ Payne, D., (2021). CSD 405 Intermediate Java Programming. Bellevue University, a
 
 package Module_6.ComposerApp;
 
-public interface ComposerDao extends GenericDao<Composer, Integer>{ /* This extends GenericDao to Composers. */
+public interface ComposerDao extends GenericDao<Composer, Integer>{ /* This extends GenericDao to Composers and includes the abstract methods. Composer and Integer take the place of K and E in the GenericDao class. */
 }
