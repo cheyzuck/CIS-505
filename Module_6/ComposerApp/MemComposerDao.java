@@ -6,7 +6,7 @@ public class MemComposerDao implements ComposerDao{
     private List<Composer> composers;
 
     public MemComposerDao(){
-        composers = new ArrayList<>();
+        composers = new ArrayList<Composer>();
         Composer composer1 = new Composer(1007,"Ludwig Van Beethoven","Classical");
         Composer composer2 = new Composer(1008, "Johann Sebastian Bach", "Classical");
         Composer composer3 = new Composer(1009, "Wolfgang Amadeus Mozart", "Classical");
@@ -35,9 +35,8 @@ public class MemComposerDao implements ComposerDao{
     }
     @Override
     public void insert(Composer newComposer){
-        List<Composer> composers = new ArrayList<>();
+        List<Composer> composers = new ArrayList<Composer>();
         composers.add(newComposer);
     }
-
-    }
+}
 
