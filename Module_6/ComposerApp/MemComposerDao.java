@@ -1,3 +1,15 @@
+/* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. 
+
+Java Interfaces. W3 Schools. (2022). Retrieved 07 October 2022, from https://www.w3schools.com/java/java_files.asp.
+Modifications by C. Zuck, 2022.
+
+Using user input value to display a specific object from an array list. Stack Overflow. (2015). Retrieved 10 October 2022, from https://stackoverflow.com/questions/30986775/using-user-input-value-to-display-a-specific-object-from-an-array-list.
+Modifications by C. Zuck, 2022.
+
+Liang, Y.D. (2019). Introduction to Java Programming and Data Structures: Comprehensive Version (12th ed.). Pearson Education, Inc.
+
+Payne, D., (2021). CSD 405 Intermediate Java Programming. Bellevue University, all rights reserved. */
+
 package Module_6.ComposerApp;
 
 import java.util.*;
