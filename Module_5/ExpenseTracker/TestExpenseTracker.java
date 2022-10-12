@@ -37,7 +37,12 @@ public class TestExpenseTracker { /* Begin TestExpenseTracker class. */
             int input = ValidatorIO.getInt(sc, menu()); /* This validates user input. */
             /* Begin if... else if... statement to attest to the three possibilities in the menu. */
             if (input == 1){
-                System.out.println(TransactionIO.findAll()); /* This should show all transactions in file. */
+                System.out.println("  MONTHLY EXPENSES");
+                ArrayList<Transaction> trans = TransactionIO.findAll();
+                for (Transaction t:trans){
+                    System.out.println(t);
+                    System.out.println();
+                }  /* This should show all transactions in file. */
             } else if (input == 2){ /* This allows the user to enter any number of transactions. */
                 String c = "y";
 
@@ -63,7 +68,7 @@ public class TestExpenseTracker { /* Begin TestExpenseTracker class. */
                 }
             } else if (input == 3){ /* This displays monthly expenses. */
                 double monthlyExpense = 0;
-                TransactionIO.findAll();
+                transactions = TransactionIO.findAll();
                 for (Transaction transaction : transactions){
                     monthlyExpense += transaction.getAmount();
                 }
