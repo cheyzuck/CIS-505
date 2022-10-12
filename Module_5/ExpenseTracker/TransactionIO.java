@@ -41,13 +41,15 @@ public class TransactionIO { /* Begin Transaction IO Class. */
 
     /* This reads the file and throws an IO Exception. */
     public static ArrayList<Transaction> findAll() throws IOException{
-        Scanner input = new Scanner (FILE_NAME);
+        Scanner input = new Scanner (new File(FILE_NAME));
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
         /* This while loop iterates through the transactions and returns them to the program. */
         while (input.hasNext()){
             Transaction transaction = new Transaction();
+            transaction.setDate(input.next());
+            transaction.setDescription(input.next());
+            transaction.setAmount(input.nextDouble());
             transactions.add(transaction);
-            System.out.println(input.next());
         }
         return transactions; 
     }
