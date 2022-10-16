@@ -1,7 +1,7 @@
 package FutureValueApp;
 
 import java.util.*;
-import javafx.application.Application;
+import javafx.*;
 
 public class ZuckFutureValueApp extends Application {
     private TextField text1;
@@ -18,6 +18,8 @@ public class ZuckFutureValueApp extends Application {
 
     @Override
     public void start(Stage primaryStage){
+        primaryStage.setTitle("Zuck Future Value App");
+
         GridPane pane = new GridPane(Pos.CENTER, 11.5, 12.5, 13.5, 14.5, 5.5, 5.5)
         lblInterestRateFormat.setTextFill(Color.RED);
         pane.add(lblInterestRateFormat, 1, 2);
@@ -28,5 +30,13 @@ public class ZuckFutureValueApp extends Application {
         actionBtnContainer.getChildren().add(btnClear);
         actionBtnContainer.getChildren().add(btnCalculate);
         pane.add(actionBtnContainer, 1, 4);
+
+        Scene scene = new Scene(text1, text2, area1, pane)
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args){
+        launch(args);
     }
 }
