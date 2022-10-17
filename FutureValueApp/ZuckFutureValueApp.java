@@ -1,7 +1,3 @@
-package FutureValueApp;
-
-import java.net.URLClassLoader;
-import java.util.*;
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -18,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class ZuckFutureValueApp extends Application {
+
     private TextField txtMonthlyPayment = new TextField();
     private TextField txtInterestRate = new TextField();
     private TextArea area1 = new TextArea();
@@ -25,27 +22,34 @@ public class ZuckFutureValueApp extends Application {
     private Label lblInterestRate = new Label("Interest Rate: ");
     private Label lblYears = new Label("Years: ");
     private Label lblInterestRateFormat = new Label("Enter 11.1% as 11.1");
-    private Label lblCalculate = new Label("Calculate");
-    private ComboBox<Integer> combo = new ComboBox<Integer>();
+    private Label year = new Label();
+    private ComboBox<Integer> years = new ComboBox<Integer>();
     private Button btnCalculate = new Button("Calculate");
     private Button btnClear = new Button("Clear");
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         primaryStage.setTitle("Zuck Future Value App");
 
         GridPane pane = new GridPane();
         pane.setAlignment(Pos.CENTER);
-        pane.setPadding(new Insets(11.5, 12.5 ,13.5, 14.5));
+        pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
         pane.setHgap(5.5);
         pane.setVgap(5.5);
+        pane.add(txtMonthlyPayment, 1, 0);
+        pane.add(txtInterestRate, 1, 1);
+        pane.add(area1, 0, 5);
+        pane.add(lblMonthlyPayment, 0, 0);
+        pane.add(lblInterestRate, 0, 1);
+        pane.add(lblYears, 0, 3);
+        pane.add(years, 1, 3);
 
         lblInterestRateFormat.setTextFill(Color.RED);
         pane.add(lblInterestRateFormat, 1, 2);
         GridPane.setHalignment(lblInterestRateFormat, HPos.RIGHT);
-        
+
         HBox actionBtnContainer = new HBox();
-        actionBtnContainer.setPadding(new Insets(15,0,15,30));
+        actionBtnContainer.setPadding(new Insets(15, 0, 15, 30));
         actionBtnContainer.setSpacing(10);
         actionBtnContainer.getChildren().add(btnClear);
         actionBtnContainer.getChildren().add(btnCalculate);
@@ -56,7 +60,7 @@ public class ZuckFutureValueApp extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch(args);
     }
 }
