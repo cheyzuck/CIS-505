@@ -39,7 +39,6 @@ public class ZuckFutureValueApp extends Application {
         pane.setPadding(new Insets(11.5, 12.5 ,13.5, 14.5));
         pane.setHgap(5.5);
         pane.setVgap(5.5);
-        pane.add();
 
         lblInterestRateFormat.setTextFill(Color.RED);
         pane.add(lblInterestRateFormat, 1, 2);
