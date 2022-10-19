@@ -8,6 +8,10 @@ Liang, Y.D. (2019). Introduction to Java Programming and Data Structures: Compre
 
 Payne, D., (2021). CSD 405 Intermediate Java Programming. Bellevue University, all rights reserved. */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 12f37a18d7dc049c37c535ca42b8555c3d852706
 /* Imports */
 import javafx.application.Application;
 import javafx.geometry.HPos;
@@ -80,4 +84,8 @@ public class ZuckFutureValueApp extends Application { /* Begin ZuckFutureValue A
     public static void main(String[] args) {
         launch(args); /* This launches the arguments in the main method. */
     } /* End main method. */
+<<<<<<< HEAD
 } /* End ZuckFutureValueApp. */
+=======
+} /* End ZuckFutureValueApp. */
+>>>>>>> 12f37a18d7dc049c37c535ca42b8555c3d852706
