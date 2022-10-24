@@ -1,5 +1,3 @@
-package Module_8.ZuckEnhancedFutureValueApp.src;
-
 /* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University.
 
 Cool IT Help. (2020). How to setup JavaFx Environment in Visual Studio code? [Video]. Youtube. https://youtu.be/H67COH9F718.

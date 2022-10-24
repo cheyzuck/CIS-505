@@ -1,5 +1,3 @@
-package Module_8.ZuckEnhancedFutureValueApp.src;
-
 /* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University.*/
 
 public class FinanceCalculator { /* Begin FinanceCalculator Class. */
