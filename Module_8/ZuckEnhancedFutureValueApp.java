@@ -25,6 +25,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutureValue App, extending JavaFX Application. */
@@ -36,7 +38,7 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
     private Label lblInterestRate = new Label("Interest Rate: ");
     private Label lblYears = new Label("Years: ");
     private Label lblInterestRateFormat = new Label("Enter 11.1% as 11.1");
-    private Label lblFutureValueDate = new Label("Calculator as of: ");
+    private Label lblFutureValueDate = new Label("Calculation as of " +getDate());
     private ComboBox<Integer> cbYears = new ComboBox<Integer>();
     private Button btnCalculate = new Button("Calculate");
     private Button btnClear = new Button("Clear");
@@ -86,10 +88,15 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         lblFutureValueDate = toString("");
         cbYears = 0;
     }
+    private String getDate(){
+        SimpleDateFormat simpleDate = new SimpleDateFormat("MM/dd/yyyy");
+        Date today = new Date();
+        String outputDate = String.format(simpleDate.format(today));
+        return outputDate;
+    }
 
-    private calculateResults(){
+    private double calculateResults(){
         FinanceCalculator.calculateFutureValue(txtMonthlyPayment, txtInterestRate, cbYears);
-        lblFutureValueDate = toString("Calculator as of " +Date.today );
     }
 
     /* This is the main method that runs the application. */
