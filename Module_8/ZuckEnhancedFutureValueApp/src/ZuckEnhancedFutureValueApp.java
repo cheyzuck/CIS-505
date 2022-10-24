@@ -106,11 +106,11 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         return outputDate;
     }
 
-    private double calculateResults(){
+    private void calculateResults(){
         Double monthlyPayment = Double.valueOf(txtMonthlyPayment.getText());
         Double interestRate = Double.valueOf(txtInterestRate.getText());
         int years = cbYears.getValue();
-        return FinanceCalculator.calculateFutureValue(monthlyPayment, interestRate, years);
+        FinanceCalculator.calculateFutureValue(monthlyPayment, interestRate, years);
     }
 
     /* This is the main method that runs the application. */
