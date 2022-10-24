@@ -1,10 +1,10 @@
-
-
 /* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University.
 
 Cool IT Help. (2020). How to setup JavaFx Environment in Visual Studio code? [Video]. Youtube. https://youtu.be/H67COH9F718.
 
 JavaFX Tutorial - JavaFX Introduction. Java2s.com. (2022). Retrieved 15 October 2022, from http://www.java2s.com/Tutorials/Java/JavaFX/index.htm.
+
+Set and Clear Value for Text Field. Java2s.com. (2022). Retrieved 23 October 2022, from http://www.java2s.com/Code/Java/JavaFX/SetandclearvalueforTextField.htm.
 
 Liang, Y.D. (2019). Introduction to Java Programming and Data Structures: Comprehensive Version (12th ed.). Pearson Education, Inc.
 
@@ -46,6 +46,8 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
     private ComboBox<Integer> cbYears = new ComboBox<>();
     private Button btnCalculate = new Button("Calculate");
     private Button btnClear = new Button("Clear");
+
+    /* This formats numbers into $0.00 format. */
     private DecimalFormat df = new DecimalFormat("$0.00");
 
     /* This overrides the start method. */
@@ -68,6 +70,7 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         pane.add(cbYears, 1, 3);
         pane.add(lblFutureValueDate,0 ,5);
 
+        /* This takes my list and adds it to my combobox. */
         ObservableList<Integer> years = FXCollections.observableArrayList(interestYears);
         cbYears.getItems().addAll(years);
         
@@ -84,6 +87,7 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         actionBtnContainer.getChildren().add(btnCalculate);
         pane.add(actionBtnContainer, 1, 4);
 
+        /* This sets the buttons to take actions based on the methods they call. */
         btnClear.setOnAction(e -> clearFormFields());
         btnCalculate.setOnAction(e -> calculateResults());
 
@@ -93,6 +97,7 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         primaryStage.show();
     } /* End override of the Start method. */
 
+    /* This method clears the form and sets the text/values to null or empty. */
     private void clearFormFields(){
         txtMonthlyPayment.setText("");
         txtInterestRate.setText("");
@@ -101,6 +106,7 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         cbYears.setValue(null);
     }
 
+    /* This method gets the date and sets it. */
     private String getDate(){
         SimpleDateFormat simpleDate = new SimpleDateFormat("MM/dd/yyyy");
         Date today = new Date();
@@ -108,6 +114,7 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         return outputDate;
     }
 
+    /* This method calculates the results based on the Finance Calculator, sets the values of the lblFutureValueDate and txtResults fields. */
     private void calculateResults(){
         Double monthlyPayment = Double.valueOf(txtMonthlyPayment.getText());
         Double interestRate = Double.valueOf(txtInterestRate.getText());
