@@ -28,6 +28,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -35,16 +36,17 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
     /* These are the attributes of the application. */
     private TextField txtMonthlyPayment = new TextField();
     private TextField txtInterestRate = new TextField();
-    private TextArea txtResults = new TextArea("The future value is " + calculateResults());
+    private TextArea txtResults = new TextArea();
     private Label lblMonthlyPayment = new Label("Monthly Payment: ");
     private Label lblInterestRate = new Label("Interest Rate: ");
     private Label lblYears = new Label("Years: ");
     private Label lblInterestRateFormat = new Label("Enter 11.1% as 11.1");
-    private Label lblFutureValueDate = new Label("Calculation as of " +getDate());
+    private Label lblFutureValueDate = new Label();
     private Integer[] interestYears = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30};
     private ComboBox<Integer> cbYears = new ComboBox<>();
     private Button btnCalculate = new Button("Calculate");
     private Button btnClear = new Button("Clear");
+    private DecimalFormat df = new DecimalFormat("$0.00");
 
     /* This overrides the start method. */
     @Override
@@ -110,7 +112,8 @@ public class ZuckEnhancedFutureValueApp extends Application { /* Begin ZuckFutur
         Double monthlyPayment = Double.valueOf(txtMonthlyPayment.getText());
         Double interestRate = Double.valueOf(txtInterestRate.getText());
         int years = cbYears.getValue();
-        FinanceCalculator.calculateFutureValue(monthlyPayment, interestRate, years);
+        lblFutureValueDate.setText("Calculation as of "+getDate());
+        txtResults.setText("The future value is " + df.format(FinanceCalculator.calculateFutureValue(monthlyPayment, interestRate, years)));
     }
 
     /* This is the main method that runs the application. */
