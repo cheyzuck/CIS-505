@@ -23,7 +23,7 @@ public class ZuckFutureValueApp extends Application {
     private Label lblYears = new Label("Years: ");
     private Label lblInterestRateFormat = new Label("Enter 11.1% as 11.1");
     private Label year = new Label();
-    private ComboBox<Integer> years = new ComboBox<Integer>();
+    private ComboBox<Integer> years = new ComboBox<>();
     private Button btnCalculate = new Button("Calculate");
     private Button btnClear = new Button("Clear");
 
@@ -38,22 +38,25 @@ public class ZuckFutureValueApp extends Application {
         pane.setVgap(5.5);
         pane.add(txtMonthlyPayment, 1, 0);
         pane.add(txtInterestRate, 1, 1);
-        pane.add(area1, 0, 5);
+        pane.add(area1, 0, 5, 2, 1);
         pane.add(lblMonthlyPayment, 0, 0);
         pane.add(lblInterestRate, 0, 1);
         pane.add(lblYears, 0, 3);
-        pane.add(years, 1, 3);
+        pane.add(years, 1, 3, 2, 1);
 
         lblInterestRateFormat.setTextFill(Color.RED);
         pane.add(lblInterestRateFormat, 1, 2);
         GridPane.setHalignment(lblInterestRateFormat, HPos.RIGHT);
+        GridPane.setHalignment(years, HPos.RIGHT);
 
         HBox actionBtnContainer = new HBox();
         actionBtnContainer.setPadding(new Insets(15, 0, 15, 30));
         actionBtnContainer.setSpacing(10);
         actionBtnContainer.getChildren().add(btnClear);
         actionBtnContainer.getChildren().add(btnCalculate);
+
         pane.add(actionBtnContainer, 1, 4);
+        pane.setPrefSize(10, 10);
 
         Scene scene = new Scene(pane);
         primaryStage.setScene(scene);
