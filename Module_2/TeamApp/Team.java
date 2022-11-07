@@ -23,17 +23,25 @@ public class Team {
         this.teamName = teamName;
     }
 
+<<<<<<< HEAD
     /*
      * This is a method that adds a player to a team and correspondingly increases
      * the player count.
      */
+=======
+    /* This is a method that adds a player to a team and correspondingly increases the player count. */
+>>>>>>> 4cc78b311d896d4b5d6411fad702ad2564301895
     public void addPlayer(String player) {
         players[playerCount] = player;
         playerCount++;
     }
 
     /* This is an accessor method that returns the players names. */
+<<<<<<< HEAD
     public String[] getPlayers() {
+=======
+    public String [] getPlayers() {
+>>>>>>> 4cc78b311d896d4b5d6411fad702ad2564301895
         return players;
     }
 
@@ -41,9 +49,17 @@ public class Team {
     public int getPlayerCount() {
         return playerCount;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 4cc78b311d896d4b5d6411fad702ad2564301895
     /* This is an accessor method that returns the team name. */
     public String getTeamName() {
         return teamName;
     }
+<<<<<<< HEAD
 }/* End of Team Class. */
+=======
+}/* End of Team Class. */
+>>>>>>> 4cc78b311d896d4b5d6411fad702ad2564301895
