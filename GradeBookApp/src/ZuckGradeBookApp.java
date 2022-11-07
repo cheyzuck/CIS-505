@@ -1,3 +1,5 @@
+/* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. */
+
 /* Imports */
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -9,19 +11,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class ZuckGradeBookApp extends Application {
-    
+public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, extending JavaFX Application. */
+    /* These are the attributes of the grade book app. */
     private TextField txtFirstName = new TextField();
     private TextField txtLastName = new TextField();
     private TextField txtCourse = new TextField();
@@ -36,10 +33,12 @@ public class ZuckGradeBookApp extends Application {
     private Button btnSave = new Button("Save Grade Entry");
     private Button btnView = new Button("View Grade Entries");
 
+    /* This overrides the start method. */
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Grade Book Form"); /* Title set. */
 
+        /* This creates the pane and adds all my attributes to it. */
         GridPane pane = new GridPane();
         pane.setAlignment(Pos.CENTER);
         pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
@@ -54,13 +53,16 @@ public class ZuckGradeBookApp extends Application {
         pane.add(lblGrade, 0, 4);
         pane.add(cbGrade, 1, 4, 2, 1);
 
+        /* This sets the format for the course title, positions it, and fills the text red. */
         pane.add(lblCourseFormat, 1, 3);
         lblCourseFormat.setTextFill(Color.RED);
         GridPane.setHalignment(lblCourseFormat, HPos.RIGHT);
 
+        /* This sets the values for the grades combo box. */
         ObservableList<String>grades = FXCollections.observableArrayList(gradeOptions);
         cbGrade.getItems().addAll(grades);
 
+        /* This creates a container for my three buttons, positions it, and adds it to the pane. */
         HBox actionBtn = new HBox();
         actionBtn.setPadding(new Insets(15, 0, 15, 30));
         actionBtn.setSpacing(10);
@@ -70,12 +72,14 @@ public class ZuckGradeBookApp extends Application {
         pane.add(actionBtn, 0, 6, 2, 1);
         GridPane.setHalignment(actionBtn, HPos.CENTER);
 
+        /* This creates the scene, adds the pane to the scene, the scene to the stage, and then shows the stage. */
         Scene scene = new Scene(pane);
         primaryStage.setScene(scene);
         primaryStage.show();
+    } /* End overridden start method. */
 
-    }
+    /* This is the main method that runs the application. */
     public static void main(String[] args) {
         launch(args); /* This launches the arguments in the main method. */
-    }
-}
+    }/* End main method. */
+}/* End ZuckGradeBook Application. */
