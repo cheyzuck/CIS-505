@@ -1,6 +1,9 @@
 /* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. */
 
 /* Imports */
+import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -32,6 +36,7 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
     private Button btnClear = new Button("Clear Grade Book");
     private Button btnSave = new Button("Save Grade Entry");
     private Button btnView = new Button("View Grade Entries");
+    private TextArea txtResults = new TextArea();
 
     /* This overrides the start method. */
     @Override
@@ -52,6 +57,7 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
         pane.add(lblCourse, 0, 2);
         pane.add(lblGrade, 0, 4);
         pane.add(cbGrade, 1, 4, 2, 1);
+        pane.add(txtResults,0,7,2,1);
 
         /* This sets the format for the course title, positions it, and fills the text red. */
         pane.add(lblCourseFormat, 1, 3);
@@ -72,11 +78,55 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
         pane.add(actionBtn, 0, 6, 2, 1);
         GridPane.setHalignment(actionBtn, HPos.CENTER);
 
+        /* This sets the actions for the buttons. */
+        btnClear.setOnAction(e -> clearFormFields());
+        btnSave.setOnAction(e -> saveGradeForm());
+        btnView.setOnAction(e -> viewGrades());
+
         /* This creates the scene, adds the pane to the scene, the scene to the stage, and then shows the stage. */
         Scene scene = new Scene(pane);
         primaryStage.setScene(scene);
         primaryStage.show();
     } /* End overridden start method. */
+
+    /* This clears the form. */
+    private void clearFormFields(){
+        txtFirstName.setText("");
+        txtLastName.setText("");
+        txtCourse.setText("");
+        cbGrade.setValue(null);
+        txtResults.setText("");
+    }
+
+    /* This writes the field entries to a file called "grades.csv". */
+    private void saveGradeForm(){
+        Student student = new Student();
+        ArrayList<Student> students = new ArrayList<Student>();
+
+        student.setFirstName(txtFirstName.getText());
+        student.setLastName(txtLastName.getText());
+        student.setCourse(txtCourse.getText());
+        student.setGrade(cbGrade.getValue());
+
+        students.add(student);
+        try {
+            StudentIO.insert(students);
+        } catch (IOException e) {
+            System.out.println("\n Exception " + e.getMessage());
+        }
+    }
+    /* This method presents the grades in the results area. */
+    /* This is what I'm having trouble with. I went back and looked at Module 5, but I'm not sure what I'm doing wrong to present that data in the txtResults. */
+    private void viewGrades(){
+        try {
+            ArrayList<Student> students = StudentIO.findAll();
+            for (Student student: students){
+                txtResults.setText(student.toString());
+            } 
+        }catch (IOException e) {
+            txtResults.setText("\n Exception " + e.getMessage());
+        }
+    }
 
     /* This is the main method that runs the application. */
     public static void main(String[] args) {
