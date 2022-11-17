@@ -1,8 +1,7 @@
-/* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. */
-
 /* Imports. */
 import java.io.*;
 import java.util.*;
+import com.opencsv.CSVWriter;
 
 /* Begin StudentIO Class. */
 public class StudentIO {
@@ -14,21 +13,25 @@ public class StudentIO {
 
     /* This inserts the entered data into the file. */
     public static void insert(ArrayList<Student> students) throws IOException{
-        PrintWriter output = null;
+        FileWriter output = null;
 
         /* Begin if/else statement to create a new file based on if one exists or not. */
         if (file.exists()){
-            output = new PrintWriter(new FileOutputStream(new File(FILE_NAME), true));
+            output = new FileWriter(FILE_NAME, true);
         }
         else {
-            output = new PrintWriter(FILE_NAME);
+            output = new FileWriter(FILE_NAME);
+            CSVWriter writer = new CSVWriter(output);
+
+            String[] headers = {"First Name", "Last Name", "Course", "Grade" };
+            writer.writeNext(headers);
         }
         /* This records the student data fields for every student. */
         for (Student student: students){
-            output.print("" + student.getFirstName());
-            output.print("" + student.getLastName());
-            output.print("" + student.getCourse());
-            output.print("" + student.getGrade());
+            output.write("" + student.getFirstName() + ",");
+            output.write("" + student.getLastName() + ",");
+            output.write("" + student.getCourse() + ",");
+            output.write("" + student.getGrade() + ",");
         }
         /* This closes the output stream. */
         output.close();
