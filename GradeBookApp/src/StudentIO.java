@@ -1,3 +1,8 @@
+/* Zuck, C. (2022). CIS 505 Intermediate Java Programming. Bellevue University. 
+
+Writing a CSV file in Java using OpenCSV. GeeksforGeeks. (2022). Retrieved 16 November 2022, from https://www.geeksforgeeks.org/writing-a-csv-file-in-java-using-opencsv/
+Modifications by C. Zuck, 2022. */
+
 /* Imports. */
 import java.io.*;
 import java.util.*;
@@ -5,9 +10,7 @@ import com.opencsv.CSVWriter;
 
 /* Begin StudentIO Class. */
 public class StudentIO {
-    /* This sets the file name and creates the file. 
-     * For the file, I know I need to create a header row. Would that work here or in the if/else statement better?
-    */
+    /* This sets the file name and creates the file. */
     final private static String FILE_NAME = "grades.csv";
     private static File file = new File(FILE_NAME);
 
