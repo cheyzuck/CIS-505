@@ -58,6 +58,6 @@ public class Student {
 
     /* This overrides the toString method. */
     public String toString(){
-        return "First Name: "+firstName+"\nLast Name: "+lastName+"\nCourse: "+course+"\nGrade: "+grade;
+        return "First Name: "+firstName+"\nLast Name: "+lastName+"\nCourse: "+course+"\nGrade: "+grade+"\n";
     }
 } /* End Student class. */
