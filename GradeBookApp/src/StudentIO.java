@@ -26,10 +26,11 @@ public class StudentIO {
             output = new FileWriter(FILE_NAME);
             CSVWriter writer = new CSVWriter(output);
 
+            /* This creates the header row. */
             String[] headers = {"First Name", "Last Name", "Course", "Grade" };
             writer.writeNext(headers);
         }
-        /* This records the student data fields for every student. */
+        /* This records the student data fields for every student. It uses commas to delimit the columns. It also adds a split to separate student entries so we can have multiple entries in the file and display them accordingly.  */
         for (Student student: students){
             output.write("" + student.getFirstName() + ",");
             output.write("" + student.getLastName() + ",");
@@ -50,12 +51,16 @@ public class StudentIO {
 
         /* This while loop iterates through the students and returns them to the program. */
         while (input.hasNext()){
+            /* This helps ignore the header. */
             if (isHeader){
                 input.nextLine();
                 isHeader = false;
                 continue;
             }
 
+            /* This helps split the students up by commas and display them according to the entries in the column based on the index in a list. 
+            This change was based on peer review of Joseph Polen's and Joshua Bollman's projects. 
+            It made more sense to use a list format and set items that way that using input.next() in my eyes. Especially because I used this with the header row. */
             String studentLine = input.nextLine();
             String[] studentGrade = studentLine.split(",");
             if (studentGrade.length > 0){ 

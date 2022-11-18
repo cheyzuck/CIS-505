@@ -115,7 +115,7 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
             System.out.println("\n Exception " + e.getMessage());
         }
     }
-    /* This method presents the grades in the results area. */
+    /* This method presents all of the saved grade entries in the file in the results area. */
     private void viewGrades(){
         try {
             ArrayList<Student> students = StudentIO.findAll();
