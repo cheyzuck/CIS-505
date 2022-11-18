@@ -116,7 +116,6 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
         }
     }
     /* This method presents the grades in the results area. */
-    /* This is what I'm having trouble with. I went back and looked at Module 5, but I'm not sure what I'm doing wrong to present that data in the txtResults. */
     private void viewGrades(){
         try {
             ArrayList<Student> students = StudentIO.findAll();
