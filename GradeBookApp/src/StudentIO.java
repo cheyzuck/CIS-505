@@ -45,15 +45,28 @@ public class StudentIO {
         Scanner input = new Scanner(new File(FILE_NAME));
         ArrayList<Student> students = new ArrayList<Student>();
 
-        /* This while loop iterates through the transactions and returns them to the program. */
+        boolean isHeader = true;
+
+        /* This while loop iterates through the students and returns them to the program. */
         while (input.hasNext()){
-            Student student = new Student();
-            student.setFirstName(input.next());
-            student.setLastName(input.next());
-            student.setCourse(input.next());
-            student.setGrade(input.next());
-            students.add(student);
+            if (isHeader){
+                input.nextLine();
+                isHeader = false;
+                continue;
+            }
+
+            String studentLine = input.nextLine();
+            String[] studentGrade = studentLine.split(",");
+            if (studentGrade.length > 0){ 
+                Student student = new Student();
+                student.setFirstName(studentGrade[0]);
+                student.setLastName(studentGrade[1]);
+                student.setCourse(studentGrade[2]);
+                student.setGrade(studentGrade[3]);
+                students.add(student);
+            }
         }
+        input.close();
         return students;
     }
 } /* End Student IO Class. */

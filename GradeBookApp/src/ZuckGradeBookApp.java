@@ -100,9 +100,9 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
 
     /* This writes the field entries to a file called "grades.csv". */
     private void saveGradeForm(){
-        Student student = new Student();
         ArrayList<Student> students = new ArrayList<Student>();
 
+        Student student = new Student();
         student.setFirstName(txtFirstName.getText());
         student.setLastName(txtLastName.getText());
         student.setCourse(txtCourse.getText());
@@ -120,9 +120,11 @@ public class ZuckGradeBookApp extends Application { /* Begin ZuckGradeBookApp, e
     private void viewGrades(){
         try {
             ArrayList<Student> students = StudentIO.findAll();
+            String viewedGrades = "";
             for (Student student: students){
-                txtResults.setText(student.toString());
+                viewedGrades += student.toString() + "\n";
             } 
+            txtResults.setText(viewedGrades);
         }catch (IOException e) {
             txtResults.setText("\n Exception " + e.getMessage());
         }
