@@ -36,7 +36,7 @@ public class StudentIO {
             output.write("" + student.getLastName() + ",");
             output.write("" + student.getCourse() + ",");
             output.write("" + student.getGrade() + ",");
-            output.write(System.lineSeparator());
+            output.write(System.lineSeparator()); /* This is a detail from the peer review from Kasi Viswanath Gorige. */
         }
         /* This closes the output stream. */
         output.close();
